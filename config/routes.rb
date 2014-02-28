@@ -7,6 +7,7 @@ StyleLust::Application.routes.draw do
   get 'items/index' => 'items#dislikeClicked', as: :dislike
   resources :items
   resources :likes
+  resources :users
 
 
 
