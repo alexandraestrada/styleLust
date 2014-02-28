@@ -1,6 +1,14 @@
 class ItemsController < ApplicationController
 
 	
+
+
+
+
+
+
+
+	
 	# def index
 	# 	items_params
 	# end
