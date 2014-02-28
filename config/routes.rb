@@ -1,4 +1,15 @@
 StyleLust::Application.routes.draw do
+
+  
+  get "/apis/index" => "apis#index", as: :api
+  get "/apis/updater" => "apis#updater", as: :updater
+  post 'items/index' => 'items#likeClicked', as: :item_like
+  get 'items/index' => 'items#dislikeClicked', as: :dislike
+  resources :items
+  resources :likes
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

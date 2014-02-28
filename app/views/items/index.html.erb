@@ -1,0 +1,20 @@
+<h1>Category</h1>
+ <div class="row">
+ 		<div class="small-12 columns deckcontainer">
+	    <div class="large-12 small-12 columns" id="itemdeck">
+	      <!-- <img src="http://placehold.it/450x450&text=[img]"> -->
+	      <% url = @items.all[@index].click_url %>
+        <% image = @items.all[@index].photo %>
+        <%= link_to image_tag(image) , url %><br /> 
+	      <br><br>
+	    </div>
+	  </div>
+		<%= @items.all[@index].name %>
+        <%= @items.all[@index].price %>
+    <br><br>
+ 	 	<div class="large-12 small-12 columns" id="likebar">
+ 	 		<%#= link_to "Dislike", dislike_path(cat: params[:cat], price: params[:price], index: (@index += 1)), class: "button" %>
+ 	 		<%= link_to "Buy Now", url, class: "button" %>
+ 			<%= link_to "Love", item_like_path(cat: params[:cat], price: params[:price], index: (@index += 1)), class: "button", method: 'update' %>
+    </div>
+  </div>

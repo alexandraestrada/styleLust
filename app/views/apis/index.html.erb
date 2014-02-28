@@ -1,0 +1,12 @@
+<h2>Test Index</h2>
+Categories
+<ol>
+	<% @categorys.each do |c| %>
+		<li>Category Name: <%=c.name%>,  Number of Items:<%=c.items.length%></li>	
+	<%end%>
+</ol>
+<p>Number of Brands: <%=@brands.length%><br />  Number of Items:<%=@items.length%></p>
+
+
+
+<%= link_to "Update", updater_path %>
