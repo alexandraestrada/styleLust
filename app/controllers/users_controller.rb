@@ -16,4 +16,15 @@ class UsersController < ApplicationController
 	def edit
 		@user = User.find(params[:id])
 	end
+
+	def create
+		@user = User.new(email: params[:email])
+		if @user.save
+
+			flash[:notice] = "account created"
+			redirect_to root_path
+		else
+			flash[:error] = "account could not be created"
+		end
+	end
 end

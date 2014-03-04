@@ -39,19 +39,30 @@ describe UsersController do
 				response.should be_success
 			end
 		end
-
-		# context 'edit' do
-		# 	it 'returns http success' do
-		# 	end
-		# end
-		# context 'show' do
-		# 	it 'returns http success' do
-		# 	end
-		# end
-
 	end 
 
 
+
+	describe "POST 'create'" do 
+		context 'when user is valid' do
+			it 'saves the athlete with the params given, sets flash notice, and redirects to the root_path' do
+				User.any_instance.stub(:valid?).and_return(validity: true)
+				post 'create', {user: {email: "example@example.com"}}
+				expect(flash[:notice]).to eq "account created"
+				expect(response).to redirect_to root_path
+				expect(assigns(:user)).to be_persisted
+			end
+		end
+
+		context 'when user is invalid' do
+			it 'sets a flash error and renders the template new' do
+				User.any_instance.stub(:valid?).and_return(validity: false)
+				post 'create', {user: {email: "example@example.com"}}
+				expect(flash[:error]).to eq "account could not be created"
+				expect(response).to render_template('new')
+			end
+		end
+	end
 
 
 
