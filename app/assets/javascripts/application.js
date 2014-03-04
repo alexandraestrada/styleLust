@@ -11,8 +11,11 @@
 // about supported directives.
 //
 //= require foundation
-//= require jquery
+// require jquery
 //= require jquery_ujs
+//= require jquery.ui.all
+//= require skrollr
+//= require skrollr.menu
 //= require turbolinks
 //= require_tree .
 
