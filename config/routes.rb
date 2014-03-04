@@ -1,17 +1,18 @@
 StyleLust::Application.routes.draw do
 
   
-  get "auths/new"
-  get "auths/create"
+
   get "sessions/create"
   get "sessions/destroy"
   get "/apis/index" => "apis#index", as: :api
   get "/apis/updater" => "apis#updater", as: :updater
-  post 'items/index' => 'items#likeClicked', as: :item_like
-  get 'items/index' => 'items#dislikeClicked', as: :dislike
+  match 'auth/:provider/callback', to: 'sessions#create', as: 'signin', via: [:get, :post]
+  match 'auth/failure', to: redirect('/'), via: [:get, :post]
+  match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]
   resources :items
   resources :likes
   resources :users
+  resources :auths, only:[:create,:new,:index]
 
 
 
@@ -19,7 +20,7 @@ StyleLust::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'items#index'
+  root 'users#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
