@@ -6,7 +6,7 @@ class ItemsController < ApplicationController
 	end
 
 	def create 
-		items_params
+		@items = items_params
 		if params[:is_like] == true
 			likeClicked()
 		elsif params[:is_like] == false
