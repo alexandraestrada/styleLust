@@ -55,6 +55,30 @@ describe User do
 				expect(user.items.last).to eq(item)
 			end
 		end
+		context '.liked_items' do
+			it 'returns an array of liked_items' do
+				user = User.create(@valid_attributes)
+				item = Item.create
+				item2 = Item.create
+				Like.create(user_id: user.id, item_id: item.id, is_like: true)
+				Like.create(user_id: user.id, item_id: item2.id, is_like: false)
+				expect(user.liked_items).not_to include item2
+				expect(user.liked_items.count).to eql 1
+
+			end 
+		end
+		context '.disliked_items' do
+			it 'returns an array of liked_items' do
+				user = User.create(@valid_attributes)
+				item = Item.create
+				item2 = Item.create
+				Like.create(user_id: user.id, item_id: item.id, is_like: true)
+				Like.create(user_id: user.id, item_id: item2.id, is_like: false)
+				expect(user.disliked_items).not_to include item
+				expect(user.disliked_items.count).to eql 1
+
+			end 
+		end
 	end
 
 end
