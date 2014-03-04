@@ -44,10 +44,27 @@ describe UsersController do
 
 
 	describe "POST 'create'" do 
+		let(:validity) {true}
+		before :each do
+			@valid_params = {
+				user: {
+					first_name: "Ellie",
+					last_name: "Hoshizaki",
+					email: "elena.hoshizaki@gmail.com",
+					password: "anystring"
+				}
+			}
+			User.any_instance.stub(:valid?).and_return(validity)
+
+		end
 		context 'when user is valid' do
-			it 'saves the athlete with the params given, sets flash notice, and redirects to the root_path' do
-				User.any_instance.stub(:valid?).and_return(validity: true)
-				post 'create', {user: {email: "example@example.com"}}
+			let(:validity) {true}
+			it 'saves the athlete with the params given, sets flash notice, redirects to the root_path, and creates a session' do
+
+				
+				# session.should_receive(:[]).with(:user_id).and_return("1")
+				post 'create', @valid_params.merge(user: {id: "1"})
+				# session[:user_id].should be_nil
 				expect(flash[:notice]).to eq "account created"
 				expect(response).to redirect_to root_path
 				expect(assigns(:user)).to be_persisted
@@ -55,28 +72,18 @@ describe UsersController do
 		end
 
 		context 'when user is invalid' do
+			let(:validity) {false}
 			it 'sets a flash error and renders the template new' do
-				User.any_instance.stub(:valid?).and_return(validity: false)
-				post 'create', {user: {email: "example@example.com"}}
+				post 'create', @valid_params
 				expect(flash[:error]).to eq "account could not be created"
-				expect(response).to render_template('new')
+				expect(response).to redirect_to root_path
 			end
 		end
 
 		context 'when every possible welcome param is present' do
-			let(:valid_params) do
-				{
-					user: {
-						first_name: "Ellie",
-						last_name: "Hoshizaki",
-						email: "elena.hoshizaki@gmail.com",
-						password: "anystring"
-					}
-				}
-			end
 
 			it 'the controller lets them all through' do
-				post 'create', valid_params
+				post 'create', @valid_params
 
 				expect(assigns(:user).first_name).to eq "Ellie"
 				expect(assigns(:user).last_name).to eq "Hoshizaki"

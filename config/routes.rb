@@ -1,6 +1,10 @@
 StyleLust::Application.routes.draw do
 
   
+  get "auths/new"
+  get "auths/create"
+  get "sessions/create"
+  get "sessions/destroy"
   get "/apis/index" => "apis#index", as: :api
   get "/apis/updater" => "apis#updater", as: :updater
   post 'items/index' => 'items#likeClicked', as: :item_like

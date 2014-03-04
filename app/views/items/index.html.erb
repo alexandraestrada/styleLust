@@ -9,12 +9,12 @@
 	      <br><br>
 	    </div>
 	  </div>
-		<%= @items.all[@index].name %>
-        <%= @items.all[@index].price %>
+		<%= @items.first.name %>
+        <%= @items.first.price %>
     <br><br>
  	 	<div class="large-12 small-12 columns" id="likebar">
- 	 		<%#= link_to "Dislike", dislike_path(cat: params[:cat], price: params[:price], index: (@index += 1)), class: "button" %>
+ 	 		<%= link_to "Dislike", new_item_path(cat: params[:cat], price: params[:price]), class: "button", method: 'create' %>
  	 		<%= link_to "Buy Now", url, class: "button" %>
- 			<%= link_to "Love", item_like_path(cat: params[:cat], price: params[:price], index: (@index += 1)), class: "button", method: 'update' %>
+ 			<%= link_to "Love", new_item_path(cat: params[:cat], price: params[:price]), class: "button", method: 'create' %>
     </div>
   </div>

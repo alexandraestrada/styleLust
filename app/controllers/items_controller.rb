@@ -1,30 +1,37 @@
 class ItemsController < ApplicationController
 
-	
-
-
-
-
-
-
-
-	
+		
 	def index
-		items_params
+		@items = items_params
 	end
 
-	def likeClicked
+	def create 
 		items_params
-		current_user.items << @items[params[:index].to_i-1]
-		current_user.update_attributes(items: current_user.items, likes: current_user.likes)
-		Like.last.update_attributes(is_liked: true)
+		if params[:is_like] == true
+			likeClicked()
+		elsif params[:is_like] == false
+			dislikeClicked()
+		else
+			#this is where we will add new items with an api request
+		end
+			
+	end
+
+
+	def likeClicked
+		Like.create(user_id: current_user.id, item_id: @items.first, is_liked: true)
+		@items.shift
 		render action: 'index'
 	end
 
 	def dislikeClicked
-
+		Like.create(user_id: current_user.id, item_id: @items.first, is_liked: false)
+		@items.shift
 		render action: 'index'
 	end
+
+
+private
 
 	def items_params
 		if params[:cat].blank?
@@ -39,14 +46,17 @@ class ItemsController < ApplicationController
 				end
 			end
 		end
-		if params[:index].blank?
-			@index = params[:index] = 0
-		else
-			@index = params[:index].to_i 
-			if 	(@items.length < @index + 1)
-				@index -= 1
-			end
+
+		return limit_array(@items)
+
+
+	end
+
+	def limit_array(array)
+		current_user.items.each do |item|
+			array.delete(item)
 		end
+		return array
 	end
 
 end
