@@ -5,7 +5,6 @@ class UsersController < ApplicationController
 
 	def new
 		@user=User.new
-		redirect_to root_path
 
 	end
 
@@ -22,10 +21,10 @@ class UsersController < ApplicationController
 		if @user.save
 			session[:user_id] = @user.id
 			flash[:notice] = "account created"
-			redirect_to root_path
+			redirect_to items_path
 		else
 			flash[:error] = "account could not be created"
-			redirect_to root_path
+			render action new
 		end
 	end
 

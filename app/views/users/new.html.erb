@@ -1,0 +1,10 @@
+	<h1>CREATE YOUR ACCOUNT</h1>
+
+	<%= form_for @user do |user| %>
+		<%= user.text_field :first_name, :placeholder => "First name" %><br>
+		<%= user.text_field :email, :placeholder => "email" %><br>
+		<%= user.password_field :password, :placeholder => "Enter password" %><br>
+		<%= user.submit "Submit" %>
+	<% end %>
+
+

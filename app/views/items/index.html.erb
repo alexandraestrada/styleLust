@@ -3,8 +3,8 @@
  		<div class="small-12 columns deckcontainer">
 	    <div class="large-12 small-12 columns" id="itemdeck">
 	      <!-- <img src="http://placehold.it/450x450&text=[img]"> -->
-	      <% url = @items.all[@index].click_url %>
-        <% image = @items.all[@index].photo %>
+	      <% url = @items.first.click_url %>
+        <% image = @items.first.photo %>
         <%= link_to image_tag(image) , url %><br /> 
 	      <br><br>
 	    </div>
@@ -13,8 +13,8 @@
         <%= @items.first.price %>
     <br><br>
  	 	<div class="large-12 small-12 columns" id="likebar">
- 	 		<%= link_to "Dislike", new_item_path(cat: params[:cat], price: params[:price]), class: "button", method: 'create' %>
+ 	 		<%= link_to "Dislike", new_item_path(cat: params[:cat], price: params[:price]), class: "button", method: 'post' %>
  	 		<%= link_to "Buy Now", url, class: "button" %>
- 			<%= link_to "Love", new_item_path(cat: params[:cat], price: params[:price]), class: "button", method: 'create' %>
+ 			<%= link_to "Love", new_item_path(cat: params[:cat], price: params[:price]), class: "button", method: 'post' %>
     </div>
   </div>
