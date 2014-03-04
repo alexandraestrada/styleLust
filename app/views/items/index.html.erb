@@ -13,9 +13,9 @@
 		<%= @items.first.name %>
         <%= @items.first.price %>
     <br><br>
- 	 	<div class="large-12 small-12 columns" id="likebar">
- 	 		<%= link_to "Dislike", new_item_path(cat: params[:cat], price: params[:price]), class: "button", method: 'post' %>
+		<div class="large-12 small-12 columns" id="likebar">
+ 	 		<%= link_to "Dislike", items_path(cat: params[:cat], price: params[:price], is_like: false), class: "button", method: 'post' %>
  	 		<%= link_to "Buy Now", url, class: "button" %>
- 			<%= link_to "Love", new_item_path(cat: params[:cat], price: params[:price]), class: "button", method: 'post' %>
+ 			<%= link_to "Love", items_path(cat: params[:cat], price: params[:price], is_like: true), class: "button", method: 'post' %>
     </div>
   </div>

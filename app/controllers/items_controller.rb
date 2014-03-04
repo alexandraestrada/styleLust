@@ -5,27 +5,32 @@ class ItemsController < ApplicationController
 		@items = items_params
 	end
 
+	def new
+		@items = items_params
+	end
+
 	def create 
 		@items = items_params
-		if params[:is_like] == true
+		if params[:is_like] == "true"
 			likeClicked()
-		elsif params[:is_like] == false
+		elsif params[:is_like] == "false"
 			dislikeClicked()
 		else
 			#this is where we will add new items with an api request
+			render action: 'index'
 		end
-			
+		
 	end
 
 
 	def likeClicked
-		Like.create(user_id: current_user.id, item_id: @items.first, is_liked: true)
+		Like.create(user_id: current_user.id, item_id: @items.first.id, is_like: true)
 		@items.shift
 		render action: 'index'
 	end
 
 	def dislikeClicked
-		Like.create(user_id: current_user.id, item_id: @items.first, is_liked: false)
+		Like.create(user_id: current_user.id, item_id: @items.first.id, is_like: false)
 		@items.shift
 		render action: 'index'
 	end
