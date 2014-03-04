@@ -62,6 +62,35 @@ describe UsersController do
 				expect(response).to render_template('new')
 			end
 		end
+
+		context 'when every possible welcome param is present' do
+			let(:valid_params) do
+				{
+					user: {
+						first_name: "Ellie",
+						last_name: "Hoshizaki",
+						email: "elena.hoshizaki@gmail.com",
+						password: "anystring"
+					}
+				}
+			end
+
+			it 'the controller lets them all through' do
+				post 'create', valid_params
+
+				expect(assigns(:user).first_name).to eq "Ellie"
+				expect(assigns(:user).last_name).to eq "Hoshizaki"
+				expect(assigns(:user).email).to eq "elena.hoshizaki@gmail.com"
+				expect(assigns(:user).password).to eq "anystring"
+			end
+		end
+
+		context 'when extra params are present' do
+			it 'the extra params are dropped' do
+				User.should_receive(:new).with({}).and_call_original
+				post 'create', { user: { backpack: 'thing'}}
+			end
+		end
 	end
 
 

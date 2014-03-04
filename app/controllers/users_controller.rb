@@ -18,13 +18,21 @@ class UsersController < ApplicationController
 	end
 
 	def create
-		@user = User.new(email: params[:email])
-		if @user.save
-
+		@user = User.new(valid_params)
+		if @user.save!
 			flash[:notice] = "account created"
 			redirect_to root_path
 		else
 			flash[:error] = "account could not be created"
 		end
+	end
+
+
+
+
+	private
+
+	def valid_params
+		params.require(:user).permit(:first_name, :last_name, :email, :password)
 	end
 end
