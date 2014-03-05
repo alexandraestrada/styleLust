@@ -2,7 +2,11 @@ class ItemsController < ApplicationController
 
 		
 	def index
-		@items = limit_array(items_params)
+		respond_to do |format|
+      format.html { @items = limit_array(items_params) }
+      format.json { 
+ 				@items = Item.find_by_sql('SELECT i.id, i.name, i.price, i.category_id, i.brand_id, i.photo, i.click_url FROM items AS i LEFT OUTER JOIN likes AS l ON i.id = l.item_id GROUP BY i.id, i.name, i.price, i.category_id, i.brand_id, i.photo, i.click_url ORDER BY COUNT(l.item_id) DESC LIMIT 100;') }
+    end
 	end
 
 
