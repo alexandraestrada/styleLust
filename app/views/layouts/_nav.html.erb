@@ -1,0 +1,89 @@
+<div class="off-canvas-wrap">
+  <div class="inner-wrap">
+    <nav class="tab-bar">
+      <section class="left-small">
+        <a class="left-off-canvas-toggle menu-icon" ><span></span></a>
+      </section>
+
+      <section class="middle tab-bar-section">
+        <%= link_to root_path do %>
+          <h1 class="title">StyleLust</h1>
+        <% end %>
+      </section>     
+    </nav>
+
+    <section class="right-small">
+        <%= link_to likes_path do %>
+          <%= image_tag("user.png", class: "user right-off-canvas-toggle") %>
+        <% end %>
+      </section>
+    </nav>
+
+    <aside class="right-off-canvas-menu">
+      <ul class="off-canvas-list">
+        <% if current_user %>
+        <li><a><% if !!current_user.image %><%= image_tag current_user.image, size: '80' %>
+          <% end %></a></li>
+        <li><%#= link_to current_user.first_name, edit_user_path(current_user) %></a></li>
+        <li><a><%= current_user.first_name %> </a></li>
+        <li><%= link_to "Logout", signout_path, id: "sign_out" %></a></li>
+        <% else %>
+        <li><a data-toggle="modal" data-target="#myModal">Login</a></li>
+        <li><%= link_to "Sign in with Facebook", "/auth/facebook", id: "#sign_in" %></li>
+        <% end %>
+        <li><%#= render :partial =>'loginform', :controller => 'auths', :action => 'create' %></li>
+        <%#= render :partial =>'signupform', :controller => 'auths', :action => 'new' %></li>
+      </ul>
+    </aside>
+
+    <aside class="left-off-canvas-menu">
+      <ul class="off-canvas-list">
+        <li><label>StyleLust</label></li>
+        <li><%= link_to root_path do %>Home</li>
+        <% end %>
+        <li><a href="#">About</a></li>
+        <li><%= link_to play_path do %>Shop</li>
+        <% end %>
+        <li><%= link_to likes_path do %>Favorites</li>
+        <% end %>
+        <!-- <li><%#= link_to settings_path do %>Settings</li> -->
+        <!-- <#% end %> -->
+        <li><a href="#">Invite</a></li>
+        <li><label>Settings</label></li>
+        <li><%= render partial: 'categorys/shopsettings' %></li>
+      </ul>
+    </aside>
+
+    <section class="main-section">
+
+
+      <%= yield %>
+
+
+    </section>
+
+  <a class="exit-off-canvas"></a>
+
+    <!-- Footer -->
+  
+  <footer class="row">
+    <div class="large-12 columns">
+      <hr />
+      <div class="row">
+        <div class="large-6 columns">
+          <p class="footer">© 2014 StyleLust. All Rights Reserved.</p>
+        </div>
+        <div class="large-6 columns">
+          <ul class="inline-list right">
+            <li><a href="#" class="footer">About</a></li>
+            <li><a href="#" class="footer">API</a></li>
+            <li><a href="#" class="footer">Contact</a></li>
+            <li><a href="#" class="footer">Terms</a></li>
+          </ul>
+        </div>
+      </div>
+    </div> 
+  </footer>
+
+  </div>
+</div>

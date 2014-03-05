@@ -1,0 +1,88 @@
+<body class="home">
+
+<div class="row">
+  <div class="large-3 columns">
+    <h1 id="logo">STYLELUST</h1>
+  </div>
+</div>
+  
+<!-- End Header -->
+ 
+<!-- First Band (Slider) -->
+<div id="b">
+  <%= image_tag("girl2.png", class: "girl2") %>
+  <p class="banner">
+    Get ridiculously good looking<br>
+    with our Top trends & Best deals.
+  </p>
+  <div class="front">
+    <a href="#" class="button signup">SIGN UP NOW</a><a href="#" class="button signin">SIGN IN</a>
+  </div>
+</div>
+
+
+<!-- Three-up Content Blocks -->
+<div class="row">
+  <div class="large-4 columns">
+    <%= image_tag("collab.svg", class: "front-icons") %>
+    <h4>Trending stuff.</h4>
+    <p>Users always have needs for apps, websites and services that don't exist yet.</p>
+  </div>
+    
+  <div class="large-4 columns">
+    <%= image_tag("collab.svg", class: "front-icons") %>
+    <h4>Just for you.</h4>
+    <p>Developers and creators always have a need to get inspiration from users.</p>
+  </div>
+    
+  <div class="large-4 columns">
+    <%= image_tag("collab.svg", class: "front-icons") %>
+    <h4>New stuff.</h4>
+    <p>Introducing MuseLab - the first platform where user needs inspire creators.</p>
+  </div>
+  
+</div>
+
+<!-- Three-up Content Blocks -->
+<h1 id="logo">HOT NOW</h1>
+<div class="row">
+  <div class="large-4 columns">
+    <img src="http://placehold.it/400x300" />
+    <h4>Trending stuff.</h4>
+  </div>
+    
+  <div class="large-4 columns">
+    <img src="http://placehold.it/400x300" />
+    <h4>Just for you.</h4>
+  </div>
+    
+  <div class="large-4 columns">
+    <img src="http://placehold.it/400x300" />
+    <h4>New stuff.</h4>
+  </div>
+  
+</div>
+<br>
+<!-- Call to Action Panel -->
+<div class="row">
+    <div class="large-12 columns">
+    
+      <div class="panel">
+        <h4>Get started!</h4>
+            
+        <div class="row">
+          <div class="large-9 columns">
+            <p>Find the perfect items for you now.</p>
+          </div>
+          <div class="large-3 columns">
+            <%= link_to items_path do %><p class="radius button right signup">Explore Now</p><% end %>
+          </div>
+        </div>
+      </div>
+    
+    </div>
+</div>
+
+</body>
+
+
