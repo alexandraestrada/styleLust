@@ -1,0 +1,64 @@
+<div id="a">
+  <div class="large-12 small-12 columns">
+
+      <a href="" class="button signup" id="save">APPLY</a>
+  </div>
+</div>
+
+
+<div class="large-12 small-12 columns">
+
+
+<h4>ONLY SHOW:</h4>
+<select class="fancy-select" id="first_drop">
+  <option value="">Select</option>
+  <%= options_for_select([['Tops', 1], ['Bottoms', 2], ['Dresses', 3], ['Outerwear', 4], ['Accessories', 5], ['Shoes', 6]], 1) %>
+</select>
+
+<br>
+
+<!-- slider test -->
+<p>
+  <label for="amount">Budget:</label>
+  <input type="text" id="amount" style="border:0; color:#f6931f; font-weight:bold;">
+</p>
+
+<div id="slider2"></div>
+
+
+<!-- end slider test -->
+
+<script>
+  $(document).ready(function(){
+
+   
+      $( "#slider2" ).slider({
+        value:100,
+        min: 20,
+        max: 500,
+        step: 20,
+        animate: true,
+        slide: function( event, ui ) {
+          $( "#amount" ).val( "$" + ui.value );
+          console.log(ui.value);
+          buildUrl(ui.value);
+        }
+      });
+
+      $( "#amount" ).val( "$" + $( "#slider" ).slider( "value" ) );
+
+      function buildUrl(price){
+        $('#save').on('click', function(e){
+            var url = "http://0.0.0.0:3000/items?cat=" + $('#first_drop option:selected').text() + "&price=" + price;
+            console.log(url);
+      window.location.href = url;
+        });
+      };
+
+    $('.fancy-select').fancySelect();
+    
+  });
+
+
+
+</script>
