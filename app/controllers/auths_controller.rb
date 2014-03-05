@@ -2,7 +2,7 @@ class AuthsController < ApplicationController
 
 	def new
 		if current_user
-			redirect_to edit_user_path
+			redirect_to items_path
 		else
 			@user = User.new
 			redirect_to root_path

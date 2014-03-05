@@ -2,16 +2,19 @@ class ItemsController < ApplicationController
 
 		
 	def index
+		
 		respond_to do |format|
-      format.html { @items = limit_array(items_params) }
+      format.html do 	
+      	@items = limit_items
+      end
       format.json { 
- 				@items = Item.find_by_sql('SELECT i.id, i.name, i.price, i.category_id, i.brand_id, i.photo, i.click_url FROM items AS i LEFT OUTER JOIN likes AS l ON i.id = l.item_id GROUP BY i.id, i.name, i.price, i.category_id, i.brand_id, i.photo, i.click_url ORDER BY COUNT(l.item_id) DESC LIMIT 100;') }
+ 				@items = Item.find_by_sql("SELECT i.id, i.name, i.price, i.category_id, i.brand_id, i.photo, i.click_url, COUNT(l.item_id) FROM items AS i LEFT OUTER JOIN likes AS l ON i.id = l.item_id WHERE l.is_like = 't' GROUP BY i.id, i.name, i.price, i.category_id, i.brand_id, i.photo, i.click_url ORDER BY COUNT(l.item_id) DESC LIMIT 100;") }
     end
 	end
 
 
 	def create 
-		@items = limit_array(items_params)
+		@items = limit_items
 		if params[:is_like] == "true"
 			likeClicked()
 		elsif params[:is_like] == "false"
@@ -39,29 +42,16 @@ class ItemsController < ApplicationController
 
 private
 
-	def items_params
-		if params[:cat].blank?
-			@items = Item.all
-		else
-			if params[:price].blank?
-				@items = Category.find_by(name: params[:cat]).items
-			else
-				@items = Category.find_by(name: params[:cat]).items.where("price < ?", params[:price].to_f)
-				if @items.length == 0
-					@items = Category.find_by(name: params[:cat]).items
-				end
-			end
-		end
-
+	def limit_items
+		
+		@items = Item.all
+		@items = @items.joins(:category).where(categories: {name: params[:cat]}) if params[:cat]
+		@items = @items.where("items.price < ?", params[:price]) if params[:price]
+		
+		@items = @items.where.not(id: Item.joins(:likes).where(likes: {user_id: current_user.id}).pluck(:id))
 		return @items.to_a
 
 	end
 
-	def limit_array(array)
-		current_user.items.each do |item|
-			array.delete(item)
-		end
-		return array
-	end
 
 end

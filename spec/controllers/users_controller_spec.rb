@@ -2,27 +2,54 @@ require 'spec_helper'
 
 
 describe UsersController do
-	describe 'GET' do 
+	describe 'GET #index' do 
+		before :each do
+			controller.stub(:current_user).and_return(current_user)
+		end
+
+		context 'when someone is logged in' do
+			let(:current_user) {User.create(email: "example@example.com")}
+			it 'responds successfully with an HTTP 200 status code' do
+				get "index"
+				expect(response).to be_success
+				expect(response.status).to eq(200)
+			end
+		end
+		context 'when someone is not logged in' do
+			let(:current_user) {nil}
+			it 'redirect to root page and send flash alert' do
+				get "index"
+				expect(response).to redirect_to root_path
+				expect(flash[:alert]).to eq "You must be logged in"
+			end
+		end
+	end
+
+	describe 'GET' do
+		before :each do
+			controller.stub(:current_user).and_return(current_user)
+		end
 		context 'index' do
+			let(:current_user) {User.create(email: "example@example.com")}
 			it 'returns http success' do				
 				User.should_receive(:new).and_return("blah")
 				get 'index'
 				expect(assigns(:user)).to eq "blah"				
 				response.should be_success
-
 			end
-
 		end
+
 		context 'new' do
+			let(:current_user) {User.create(email: "example@example.com")}
 			it 'returns http success' do
 				User.should_receive(:new).and_return("blah")
 				get 'new'
 				expect(assigns(:user)).to eq "blah"
-				expect(response).to redirect_to(root_path)
 			end
 		end
 
 		context 'show' do
+			let(:current_user) {User.create(email: "example@example.com")}
 			it 'returns http success' do
 				User.should_receive(:find).with("5").and_return("qellieg")
 				get 'show', {id:5} 
@@ -32,6 +59,7 @@ describe UsersController do
 		end
 
 		context 'edit' do
+			let(:current_user) {User.create(email: "example@example.com")}
 			it 'returns http success' do
 				User.should_receive(:find).with("5").and_return("waffles")
 				get 'edit', {id:5}
@@ -66,7 +94,7 @@ describe UsersController do
 				post 'create', @valid_params.merge(user: {id: "1"})
 				# session[:user_id].should be_nil
 				expect(flash[:notice]).to eq "account created"
-				expect(response).to redirect_to root_path
+				expect(response).to redirect_to items_path
 				expect(assigns(:user)).to be_persisted
 			end
 		end
@@ -76,7 +104,7 @@ describe UsersController do
 			it 'sets a flash error and renders the template new' do
 				post 'create', @valid_params
 				expect(flash[:error]).to eq "account could not be created"
-				expect(response).to redirect_to root_path
+				expect(response).to redirect_to items_path
 			end
 		end
 
@@ -88,7 +116,7 @@ describe UsersController do
 				expect(assigns(:user).first_name).to eq "Ellie"
 				expect(assigns(:user).last_name).to eq "Hoshizaki"
 				expect(assigns(:user).email).to eq "elena.hoshizaki@gmail.com"
-				expect(assigns(:user).password).to eq "anystring"
+				# expect(assigns(:user).password).to eq "anystring"
 			end
 		end
 
@@ -105,16 +133,15 @@ describe UsersController do
 
 
 
-	# do crud: index, new, show, edit, create, update, destroy
+	# do crud: update, destroy
 	# make 4 describes one for each action
 		
 
 
-	# 	describing get
-	# 		context 'new'
-	# 	describing post
 	# 	describing patch
 	# 	describing delete
+
+
 
 
 end

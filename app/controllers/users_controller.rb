@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+	before_action :login_required, only:[:index]
+
 	def index
 		@user = User.new		
 	end
@@ -24,7 +26,7 @@ class UsersController < ApplicationController
 			redirect_to items_path
 		else
 			flash[:error] = "account could not be created"
-			render action new
+			redirect_to items_path
 		end
 	end
 
@@ -35,5 +37,12 @@ class UsersController < ApplicationController
 
 	def valid_params
 		params.require(:user).permit(:first_name, :last_name, :email, :password)
+	end
+
+	def login_required
+		if current_user.nil?
+			flash[:alert] = "You must be logged in"
+			redirect_to root_path
+		end
 	end
 end

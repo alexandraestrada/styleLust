@@ -34,20 +34,6 @@ describe Item do
 			expect(item.errors[:price]).to include "price must be present"
 			end
 		end
-		context 'when category_id is missing' do
-			it 'record is not valid' do
-			item = Item.new(@valid_attributes.merge(category_id: ""))
-			expect(item).not_to be_valid
-			expect(item.errors[:category_id]).to include "category_id must be present"
-			end
-		end
-		context 'when brand_id is missing' do
-			it 'record is not valid' do
-			item = Item.new(@valid_attributes.merge(brand_id: ""))
-			expect(item).not_to be_valid
-			expect(item.errors[:brand_id]).to include "brand_id must be present"
-			end
-		end
 		context 'when photo is missing' do
 			it 'record is not valid' do
 			item = Item.new(@valid_attributes.merge(photo: ""))

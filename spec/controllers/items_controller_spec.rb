@@ -2,31 +2,29 @@ require 'spec_helper'
 
 describe ItemsController do
 
-	describe 'GET' do
-		# context 'index' do
-		# 	it 'returns HTTP success' do
-		# 		# params[:cat].should_receive(:blank?).and_return(true)
-		# 		# assigns(:items).and_return([0,1])
-		# 		get 'index'
-		# 		expect(assigns(:items)).to eql items_params
-		# 	end
-		# end
-		# context 'show' do
-		# 	it 'returns HTTP success' do
-				
-		# 	end
-		# end
-		# context 'edit' do
-		# 	it 'returns HTTP success' do
-				
-		# 	end
-		# end
-		# context 'new' do
-		# 	it 'returns HTTP success' do
-				
-		# 	end
-		# end
-	end
+	# describe "GET 'index'" do
+ #    context 'when format is JSON' do
+ #      render_views
+
+ #      it 'gives back all things without the created_at and updated_at' do
+ #        item = Item.create(user: current_user
+ #        database_thing = opinion.thing
+
+ #        get 'index', format: 'json'
+
+ #        things = JSON.parse(response.body)['things']
+ #        expect(things.count).to eq 1
+
+ #        thing = things.first
+ #        expect(thing['id']).to eq database_thing.id
+ #        expect(thing['name']).to eq database_thing.name
+ #        expect(thing['image_url']).to eq "http://#{request.host}#{controller.class.helpers.asset_url(database_thing.image_url)}"
+ #        expect(thing['url']).to eq controller.thing_url(database_thing, format: 'json')
+ #        expect(thing['opinions']['count']).to eq 1
+ #        expect(thing.keys.count).to eq 5  # id, name, image_url, url, opinions
+ #      end
+ #    end
+ #  end
 
 
 end
