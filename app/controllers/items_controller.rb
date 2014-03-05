@@ -2,15 +2,12 @@ class ItemsController < ApplicationController
 
 		
 	def index
-		@items = items_params
+		@items = limit_array(items_params)
 	end
 
-	def new
-		@items = items_params
-	end
 
 	def create 
-		@items = items_params
+		@items = limit_array(items_params)
 		if params[:is_like] == "true"
 			likeClicked()
 		elsif params[:is_like] == "false"
@@ -52,8 +49,7 @@ private
 			end
 		end
 
-		return limit_array(@items)
-
+		return @items.to_a
 
 	end
 
