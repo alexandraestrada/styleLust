@@ -45,23 +45,7 @@
 
 <!-- Three-up Content Blocks -->
 <h1 id="logo">HOT NOW</h1>
-<div class="row">
-  <div class="large-4 columns">
-    <img src="http://placehold.it/400x300" />
-    <h4>Trending stuff.</h4>
-  </div>
-    
-  <div class="large-4 columns">
-    <img src="http://placehold.it/400x300" />
-    <h4>Just for you.</h4>
-  </div>
-    
-  <div class="large-4 columns">
-    <img src="http://placehold.it/400x300" />
-    <h4>New stuff.</h4>
-  </div>
-  
-</div>
+<div class="row" id="hotnow"></div>
 <br>
 <!-- Call to Action Panel -->
 <div class="row">
@@ -82,6 +66,22 @@
     
     </div>
 </div>
+
+<script id="hotnow-template" type="text/x-handlebars-template">
+  {{#each items}}
+    <a href="{{click_url}}">
+      <div class="large-4 columns hotnow">
+        <img src="{{image_url}}" />
+        <h5>{{name}}</h5>
+      </div>
+    </a>
+  {{/each}}
+</script>
+<script type="text/javascript">
+  $(function() {
+    loadHotNow();
+  });
+</script>
 
 </body>
 

@@ -16,7 +16,24 @@
 //= require jquery.ui.all
 //= require skrollr
 //= require skrollr.menu
+//= require handlebars
 //= require turbolinks
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
+
+window.loadHotNow = function() {
+ // AJAX call to get our list of things
+ $.ajax({
+   type: 'GET',
+   url: 'http://0.0.0.0:3000/items.json',
+   dataType: 'json'
+ }).done(function(data) {
+   // grabs the template we're going to use
+   var source = $("#hotnow-template").html();
+   // compiles it with Handlebars (pops content from things into thing-template)
+   var template = Handlebars.compile(source);
+   // displays compiled template with things in a div called content
+   $('#hotnow').html(template(data));
+ });
+};

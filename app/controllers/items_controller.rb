@@ -1,14 +1,16 @@
+require 'httparty'
 class ItemsController < ApplicationController
 
 		
 	def index
 		
 		respond_to do |format|
-      format.html do 	
-      	@items = limit_items
-      end
-      format.json { 
- 				@items = Item.find_by_sql("SELECT i.id, i.name, i.price, i.category_id, i.brand_id, i.photo, i.click_url, COUNT(l.item_id) FROM items AS i LEFT OUTER JOIN likes AS l ON i.id = l.item_id WHERE l.is_like = 't' GROUP BY i.id, i.name, i.price, i.category_id, i.brand_id, i.photo, i.click_url ORDER BY COUNT(l.item_id) DESC LIMIT 100;") }
+			format.json { 
+ 				get_hot_picks()
+ 			}
+      format.html {
+				@items = limit_items
+	    }
     end
 	end
 
@@ -51,6 +53,11 @@ private
 		@items = @items.where.not(id: Item.joins(:likes).where(likes: {user_id: current_user.id}).pluck(:id))
 		return @items.to_a
 
+	end
+
+	def get_hot_picks
+		@items = Item.find_by_sql("SELECT i.id, i.name, i.price, i.category_id, i.brand_id, i.photo, i.click_url, COUNT(l.item_id) FROM items AS i LEFT OUTER JOIN likes AS l ON i.id = l.item_id WHERE l.is_like = 't' GROUP BY i.id, i.name, i.price, i.category_id, i.brand_id, i.photo, i.click_url ORDER BY COUNT(l.item_id) DESC LIMIT 3;") 
+		
 	end
 
 

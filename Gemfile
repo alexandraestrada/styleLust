@@ -13,6 +13,8 @@ gem 'modernizr-rails'
 gem 'skrollr-rails'
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'thin'
+gem 'httparty'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
