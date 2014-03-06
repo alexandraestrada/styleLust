@@ -24,17 +24,21 @@
 
     <ul class="shop-panel">
   		<li><%= link_to "LOSE", items_path(cat: params[:cat], price: params[:price], is_like: false), class: "button lose", method: 'post' %></li>
-  		<li><%= link_to "BUY", url, class: "button buy" %></li>
+  		<li><%= link_to "BUY",url,class: "button buy" %></li>
+
   		<li><%= link_to "LUST", items_path(cat: params[:cat], price: params[:price], is_like: true), class: "button lust", method: 'post' %>
 			</li>
 		</ul>
 
   </div>
+  <a href="#" data-reveal-id="myModal" data-reveal>Click Me For A Modal</a>
 </body>
+
 
 <!-- Maybe Remove this -->
 
 
+<% render partial: 'items/modal' %>
 <% else %>
 
 
@@ -60,3 +64,5 @@
 
 
 <% end %>
+
+
