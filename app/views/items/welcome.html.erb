@@ -9,15 +9,21 @@
 <!-- End Header -->
  
 <!-- First Band (Slider) -->
-<div id="b">
-  <%= image_tag("girl2.png", class: "girl2") %>
-  <p class="banner">
-    Get ridiculously good looking<br>
-    with our Top trends & Best deals.
-  </p>
-  <div class="front">
-    <a href="#" class="button signup">SIGN UP NOW</a><a href="#" class="button signin">SIGN IN</a>
+<div class="show-for-medium-up">
+  <div id="b">
+    <%= image_tag("girl2.png", class: "girl2") %>
+    <p class="banner">
+      Get ridiculously good looking<br>
+      with our Top trends & Best deals.
+    </p>
+    <% if !current_user %>
+    <div class="front">
+      <a href="#" class="button" id="signup">SIGN UP NOW</a>
+      <a href="#" class="button" id="signin">SIGN IN</a>
+    </div>
+    <% end %>
   </div>
+
 </div>
 
 
@@ -84,5 +90,3 @@
 </div>
 
 </body>
-
-

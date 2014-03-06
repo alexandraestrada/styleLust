@@ -1,0 +1,5 @@
+<%= form_for :user, {url: auths_path, method: 'post'} do |user| %>
+	<%= user.text_field :username, :placeholder => "Enter your username", class: "form-control" %><br>
+	<%= user.password_field :password, :placeholder => "Enter password", class: "form-control" %><br>
+	<%= user.submit "Log in!", class: "btn" %>
+<% end %>

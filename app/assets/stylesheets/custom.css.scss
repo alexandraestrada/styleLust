@@ -41,14 +41,28 @@ body.home {
 	overflow: hidden;
 }
 
-.signup {
-	margin-right: 1%;
-	background-color: rgba(118,200,176,1);
+.front {
+	position: relative;
+	margin-right: 40%;
+	width: 300px;
+	height: 55px;
+	overflow: auto;
 }
 
-.signin {
+#signup {
+	margin-right: 1%;
+	background-color: rgba(118,200,176,1);
+	position: absolute;
+	left: 0px;
+	height: 50px;
+}
+
+#signin {
 	border: 1px solid rgba(118,200,176,1);
 	background-color: rgba(118,200,176,.2);
+	position: absolute;
+	right: 0px;
+	height: 50px;
 }
 
 .iphone {
@@ -70,11 +84,6 @@ body.home {
 	color: rgb(255,77,66);
 }
 
-.front {
-	margin-right: 40%;
-}
-
-
 .front-icons {
 	height: 200px;
 	width: 100%;
@@ -84,7 +93,7 @@ body.home {
 
 .deckcontainer {
 	/*border: 1px solid lime;*/
-	width: 600px;
+	/*width: 600px;*/
 	height: 550px;
 	margin: 0 auto;
 	background-image: url(productslidedeck2.png);
@@ -145,6 +154,13 @@ body.shop {
 	font-family: 'Marvel';
 }
 
+.shop-panel {
+  @include block-grid(
+  	$per-row: 3,
+    $spacing: 5px 
+  );
+}
+
 #product-details {
 	width: 482px;
 	height: 100px;
@@ -163,7 +179,6 @@ body.shop {
 }
 
 .shop-images {
-	/*border: 1px solid red;*/
 	max-height: 400px;
 }
 
