@@ -161,7 +161,7 @@ body.shop {
   );
 }
 
-#product-details {
+.product-details {
 	width: 482px;
 	height: 100px;
 	/*border: 1px solid red;*/
@@ -180,6 +180,70 @@ body.shop {
 
 .shop-images {
 	max-height: 400px;
+}
+
+@media only screen and (max-width: 40em) { 
+			.deckcontainer {
+			background-size: 300px 350px;
+			margin: 0 auto;
+			top: -150px;
+			background-image: url(productslidedeck2.png);
+			background-repeat: no-repeat;
+			background-position: center;
+			position: relative;
+		}
+
+		#itemdeck {
+			margin: 0 auto;
+			overflow: hidden;
+			max-width: 65%;
+			max-height: 68%;
+			padding-top: 170px;
+			
+		}
+
+		.lose {
+			background-color: rgb(255,77,66);
+			font-family: 'Marvel';
+			top: -250px;
+		}
+
+		.lust {
+			background-color: rgb(81,212,173);
+			font-family: 'Marvel';
+			top: -250px;
+		}
+
+		.buy {
+			background-color: rgba(81,212,173, 0.1);
+			border: 2px rgb(81,212,173) solid;
+			font-family: 'Marvel';
+			top: -250px;
+		}
+
+		.product-details {
+			width: 237px;
+			height: 60px;
+			background-color: rgba(255,0,0,.7);
+			margin: 0 auto;
+			overflow: hidden;
+			position: absolute;
+			bottom: 100px;
+			left: 0px;
+			right: 0px;
+			top: 352px;
+			color: white;
+			padding-top: 1%;
+			font-family: 'Marvel';
+			font-size: 1em;
+		}
+
+		.play {
+	margin-top: -1%;
+	font-family: 'Marvel';
+	color: rgb(81,212,173);
+	}
+
 }
 
 /* ----------------------SETTINGS---------------------------------- */
