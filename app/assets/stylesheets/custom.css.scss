@@ -157,8 +157,10 @@ body.shop {
 .shop-panel {
   @include block-grid(
   	$per-row: 3,
-    $spacing: 5px 
+    $spacing: 5px
   );
+  width: 300px;
+  margin: 0 auto;
 }
 
 .product-details {
