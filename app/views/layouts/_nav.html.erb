@@ -2,7 +2,8 @@
   <div class="inner-wrap">
     <nav class="tab-bar">
       <section class="left-small">
-        <a class="left-off-canvas-toggle menu-icon" ><span></span></a>
+        <%= image_tag("menu.png", class: "menu left-off-canvas-toggle" ) %>
+        <!-- <a class="left-off-canvas-toggle menu-icon" ><span></span></a> -->
       </section>
 
       <section class="middle tab-bar-section">
@@ -13,9 +14,7 @@
     </nav>
 
     <section class="right-small">
-        <%#= link_to likes_path do %>
-          <%= image_tag("user.png", class: "user right-off-canvas-toggle") %>
-        <!-- <#% end %> -->
+          <%= image_tag("user.svg", class: "user right-off-canvas-toggle") %>
       </section>
     </nav>
 
@@ -28,6 +27,8 @@
       	<li><%= link_to "Logout", signout_path, id: "sign_out" %></a></li>
       	<% else %>
       	<li><%= link_to "Sign in with Facebook", "/auth/facebook", id: "#sign_in" %></li>
+      	<li><%= link_to "Sign In", new_auth_path %></li>
+      	<li><%= link_to "Sign Up", new_user_path %></li>
       	<% end %>
       </ul>
     </aside>
@@ -41,6 +42,7 @@
         <li><%= link_to items_path do %>Shop</li>
         <% end %>
         <li><a href="#">Invite</a></li>
+        <li><a>Likes</a></li>
         <li><label>Settings</label></li>
         <li><%= render partial: 'items/shopsettings' %></li>
       </ul>

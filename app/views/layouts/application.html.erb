@@ -7,8 +7,11 @@
     <title><%= content_for?(:title) ? yield(:title) : "StyleLust" %></title>
 
     <%= stylesheet_link_tag    "application" %>
+
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= javascript_include_tag "jquery" %> 
+    
+    <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
   </head>
 
@@ -16,7 +19,7 @@
     <%= render partial: 'layouts/nav' %>
 
     <%#= yield %>
-    
-    <%= javascript_include_tag "application" %>
+
+    <%= javascript_include_tag "foundation" %>
   </body>
 </html>

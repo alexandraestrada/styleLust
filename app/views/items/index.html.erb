@@ -1,14 +1,20 @@
+<!-- Figure this out after merge -->
+<% if current_user %>
+
+<!-- Keep this for sure -->
+<body class="shop">
+
 <h1 class="play"><%= @items.first.category.name.upcase %></h1>
  <div class="row">
- 		<div class="deckcontainer">
-	    <div class="large-12 small-12 columns" id="itemdeck">
+ 		<div class="deckcontainer large-12 small-12 columns">
+	    <div id="itemdeck">
 	      <% url = @items.first.click_url %>
         <% image = @items.first.photo %>
         <%= link_to image_tag(image) , url %> 
 	      <br>
 	    </div>
 
-	    <div id="product-details">
+	    <div class="product-details">
 	    	<%= @items.first.name %>
 	    	<br>
         <%= @items.first.price %>
@@ -16,9 +22,41 @@
 
 	  </div>
 
-		<div class="large-12 small-12 columns" id="likebar">
- 	 		<%= link_to "Dislike", items_path(cat: params[:cat], price: params[:price], is_like: false), class: "button", method: 'post' %>
- 	 		<%= link_to "Buy Now", url, class: "button" %>
- 			<%= link_to "Love", items_path(cat: params[:cat], price: params[:price], is_like: true), class: "button", method: 'post' %>
-    </div>
+    <ul class="shop-panel">
+  		<li><%= link_to "LOSE", items_path(cat: params[:cat], price: params[:price], is_like: false), class: "button lose", method: 'post' %></li>
+  		<li><%= link_to "BUY", url, class: "button buy" %></li>
+  		<li><%= link_to "LUST", items_path(cat: params[:cat], price: params[:price], is_like: true), class: "button lust", method: 'post' %>
+			</li>
+		</ul>
+
   </div>
+</body>
+
+<!-- Maybe Remove this -->
+
+
+<% else %>
+
+
+
+<body class="continue">
+
+	<div class="browse">
+		<%= link_to new_auth_path do %>
+		<div class="large-6 small-6 columns">
+		<h1 class="accent">L O G I N</h1><br>
+		<%= image_tag("login.svg", class: "img-circle img-thumbnail3") %>
+		</div>
+		<% end %>
+
+		<%= link_to new_user_path do %>
+		<div class="large-6 small-6 columns">
+		<h1 class="accent">S I G N U P</h1><br>
+		<%= image_tag("signup.svg", class: "img-circle img-thumbnail3") %>
+		<% end %>
+		</div>
+	</div>
+</body>
+
+
+<% end %>

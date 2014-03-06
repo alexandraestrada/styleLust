@@ -1,4 +1,8 @@
 styleLust
 =========
 
-You are in the addViews branch of the railsnew StyleLust. This version includes testing files.
+<p>You are in the wedFrontEnd branch of the railsnew StyleLust. This version includes:<p>
+
+ * Ellie's front end work done remotely on Wednesday, March 5th
+ * testing files
+
