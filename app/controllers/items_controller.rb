@@ -41,6 +41,9 @@ class ItemsController < ApplicationController
 		render action: 'index'
 	end
 
+	def likedItems
+		
+	end
 
 private
 

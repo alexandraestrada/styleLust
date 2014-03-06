@@ -1,7 +1,6 @@
 StyleLust::Application.routes.draw do
 
-  
-
+  get "items/likedItems" => "items#likedItems", as: :likedItems
   get "sessions/create"
   get "sessions/destroy"
   get "/apis/index" => "apis#index", as: :api
