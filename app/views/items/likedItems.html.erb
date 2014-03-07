@@ -13,7 +13,7 @@
     </div>
     <div id="myModal<%= item.id %>" class="reveal-modal myModal" data-reveal>
       <a class="close-reveal-modal">&#215;</a>
-      <iframe class="iframe" src="<%= item.click_url.sub!('http://', '') %>"> </iframe>
+      <iframe class="iframe" src="<%= item.click_url.to_s %>"> </iframe>
       
     </div>
   <% end %>
