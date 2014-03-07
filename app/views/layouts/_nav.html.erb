@@ -43,13 +43,11 @@
         <% end %>
         <li><%= link_to likedItems_path do %>Favorites</li>
         <% end %>
-        <li><%= link_to items_path do %>Shop</li>
-        <% end %>
       
         <li>
           <dl class="accordion" data-accordion>
             <dd>
-              <a href="#panel1" id="settings">Shop Settings</a>
+              <a href="#panel1" id="settings">Shop</a>
               <div id="panel1" class="content">
 
                   <%= render partial: 'items/shopsettings' %>

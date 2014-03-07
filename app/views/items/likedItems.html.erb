@@ -1,5 +1,5 @@
-<h1>Favorites:<h1>
-
+<body class="shop">
+<h1 class="play">FAVORITES</h1>
 
 <div class="row">
   <% current_user.liked_items.each do |item| %>
@@ -8,8 +8,10 @@
         <li class="title product-name"><%= item.name %></li>
         <li class="price uniform"><%= link_to image_tag(item.photo), item.click_url %></li>
         <li class="bullet-item">$<%= item.price %></li>
-        <li class="cta-button"><a class="button" href="#">Buy Now</a></li>
+        <li class="cta-button"><%= link_to "BUY",item.click_url, class: "button fave-buy-btn" %></li>
       </ul>
     </div>
   <% end %>
 </div>
+
+</body>

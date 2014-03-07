@@ -35,9 +35,9 @@
       $( "#slider2" ).slider({
         value:100,
         min: 20,
-        max: 500,
-        step: 20,
-        // animate: true,
+        max: 50000,
+        step: 50,
+        animate: true,
         slide: function( event, ui ) {
           $( "#amount" ).val( "$" + ui.value );
           // console.log(ui.value);
