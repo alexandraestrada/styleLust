@@ -29,23 +29,24 @@
 <!-- end slider test -->
 
 <script>
-  $(document).ready(function(){
+  $(function(){
 
-   
+    
       $( "#slider2" ).slider({
         value:100,
         min: 20,
         max: 500,
         step: 20,
-        animate: true,
+        // animate: true,
         slide: function( event, ui ) {
           $( "#amount" ).val( "$" + ui.value );
-          console.log(ui.value);
+          // console.log(ui.value);
           buildUrl(ui.value);
         }
       });
-
-      $( "#amount" ).val( "$" + $( "#slider" ).slider( "value" ) );
+      // console.log($( "#slider" ).slider( "value" ));
+      $( "#amount" ).val( "$" + $( "#slider2" ).slider( "value" ) );
+    
 
       function buildUrl(price){
         $('#save').on('click', function(e){
