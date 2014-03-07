@@ -8,8 +8,13 @@
         <li class="title product-name"><%= item.name %></li>
         <li class="price uniform"><%= link_to image_tag(item.photo), item.click_url %></li>
         <li class="bullet-item">$<%= item.price %></li>
-        <li class="cta-button"><%= link_to "BUY",item.click_url, class: "button fave-buy-btn" %></li>
+        <li class="cta-button"><%= link_to "BUY",'#myModal' + item.id.to_s, 'data-reveal-id'=> ("myModal" + item.id.to_s), class: "button fave-buy-btn" %></li>
       </ul>
+    </div>
+    <div id="myModal<%= item.id %>" class="reveal-modal myModal" data-reveal>
+      <a class="close-reveal-modal">&#215;</a>
+      <iframe class="iframe" src="<%= item.click_url %>"> </iframe>
+      
     </div>
   <% end %>
 </div>
