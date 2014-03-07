@@ -4,13 +4,8 @@
  <div class="row" id="swipe">
  		<div class="deckcontainer large-12 small-12 columns">
 	    <div class="itemdeck"> 
-	      
-        <div class="show-for-small-only">
-          <%= link_to image_tag(@items.first.photo),@items.first.click_url,class: "button buy" %>
-        </div>
-
-        <div class="show-for-medium-up">
-          <%= link_to image_tag(@items.first.photo), '#myModal', 'data-reveal-id'=> "myModal", class: "button buy" %>
+          <%= link_to image_tag(@items.first.photo),@items.first.click_url,class: "show-for-small-only" %>
+          <%= link_to image_tag(@items.first.photo), '#myModal', 'data-reveal-id'=> "myModal", class: "show-for-medium-up" %>
         </div> 
         <br>
 	    </div>
