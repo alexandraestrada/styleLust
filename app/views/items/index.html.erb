@@ -24,9 +24,6 @@ $(function() {
     $(".spin").click(function(){
       $(".itemdeck").toggleClass("itemdeck-change");
     });
-
-    $('.menu-icon').click(function(){ false });
-
   });
 
 </script>
@@ -66,4 +63,10 @@ $(function() {
 		 <%=render partial:'items/modal' %>
 
   </div>
+      <script>
+      $(document).foundation();
+      $('a.left-off-canvas-toggle').on('click',function(){
+
+      });
+    </script>
 </body>
