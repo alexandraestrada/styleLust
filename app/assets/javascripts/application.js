@@ -20,7 +20,7 @@
 //= require turbolinks
 //= require_tree .
 
-$(function(){ $(document).foundation(); });
+$(function(){ $(document).foundation(); $('.menu-icon').click(function(){ false });});
 
 window.loadHotNow = function() {
  // AJAX call to get our list of things
@@ -37,10 +37,3 @@ window.loadHotNow = function() {
    $('#hotnow').html(template(data));
  });
 };
-
-$(document).ready(function() {
-    $(document).foundation();
-
-    // Hack to get off-canvas .menu-icon to fire on iOS
-    $('.menu-icon').click(function(){ false });
-});
