@@ -112,13 +112,18 @@ body.home {
   }
 }
 
-#itemdeck {
+.itemdeck {
 	padding-top: 90px;
 	overflow: hidden;
-	/*fix this*/
-	-webkit-animation: infinite-spinning 2s infinite;
 
 }
+
+.itemdeck-change {
+	/*fix this*/
+	-webkit-animation: infinite-spinning 2s;
+
+}
+
 
 label {
 	font-family: 'Raleway', sans-serif;
@@ -221,7 +226,7 @@ iframe, object, embed {
 			position: relative;
 		}
 
-		#itemdeck {
+		.itemdeck {
 			margin: 0 auto;
 			overflow: hidden;
 			max-width: 65%;

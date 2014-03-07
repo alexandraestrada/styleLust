@@ -19,6 +19,14 @@ $(function() {
          threshold:50
       });
     });
+
+  $(function(){
+    $(".spin").click(function(){
+      $(".itemdeck").toggleClass("itemdeck-change");
+    });
+
+  });
+
 </script>
 
 
@@ -26,7 +34,7 @@ $(function() {
 <h1 class="play"><%= @items.first.category.name.upcase %></h1>
  <div class="row" id="swipe">
  		<div class="deckcontainer large-12 small-12 columns">
-	    <div id="itemdeck">
+	    <div class="itemdeck">
 	      <% url = @items.first.click_url %>
         <% image = @items.first.photo %>
         <%= link_to image_tag(image) , url %> 
@@ -42,8 +50,9 @@ $(function() {
 	  </div>
 
 
+
     <div class="buttongroup">
-        <%= link_to "LOSE", items_path(cat: params[:cat], price: params[:price], is_like: false), class: "button lose", method: 'post' %>
+        <%= link_to "LOSE", items_path(cat: params[:cat], price: params[:price], is_like: false), class: "button lose spin", method: 'post' %>
 
   		<div class="show-for-small-only">
         <%= link_to "BUY",url,class: "button buy" %>
@@ -53,7 +62,7 @@ $(function() {
   			<%= link_to "BUY", '#myModal', 'data-reveal-id'=> "myModal", class: "button buy" %>
   		</div> 
   		
-        <%= link_to "LUST", items_path(cat: params[:cat], price: params[:price], is_like: true), class: "button lust", method: 'post' %>
+        <%= link_to "LUST", items_path(cat: params[:cat], price: params[:price], is_like: true), class: "button lust spin", method: 'post' %>
     </div>
 
 		 <%=render partial:'items/modal' %>
