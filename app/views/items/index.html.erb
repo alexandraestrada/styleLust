@@ -44,14 +44,12 @@ $(function() {
 	    <div class="product-details">
 	    	<%= @items.first.name %>
 	    	<br>
-        <%= @items.first.price %>
+        $<%= @items.first.price %>
       </div>
 
 	  </div>
 
-
-
-    <div class="buttongroup">
+    <div class="shopbar">
         <%= link_to "LOSE", items_path(cat: params[:cat], price: params[:price], is_like: false), class: "button lose spin", method: 'post' %>
 
   		<div class="show-for-small-only">
@@ -64,7 +62,7 @@ $(function() {
   		
         <%= link_to "LUST", items_path(cat: params[:cat], price: params[:price], is_like: true), class: "button lust spin", method: 'post' %>
     </div>
-
+    
 		 <%=render partial:'items/modal' %>
 
   </div>
