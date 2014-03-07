@@ -1,7 +1,7 @@
 <div id="a">
   <div class="large-12 small-12 columns">
 
-      <a href="" class="button" id="save">APPLY</a> 
+      <div onclick="buildUrl()" class="button" id="save">APPLY</div> 
   </div>
 </div>
 
@@ -30,36 +30,34 @@
   $(function(){
 
     
-      $( "#slider2" ).slider({
-        value:100,
-        min: 20,
-        max: 5000,
-        step: 20,
-        animate: true,
-        slide: function( event, ui ) {
-          $( "#amount" ).val( "$" + ui.value );
-          // console.log(ui.value);
-          buildUrl(ui.value);
-        }
-      });
+    $( "#slider2" ).slider({
+      value:100,
+      min: 20,
+      max: 5000,
+      step: 20,
+      animate: true,
+      slide: function( event, ui ) {
+        $( "#amount" ).val( "$" + ui.value );
+        // console.log(ui.value);
+      }
+    });
       // console.log($( "#slider" ).slider( "value" ));
-      $( "#amount" ).val( "$" + $( "#slider2" ).slider( "value" ) );
+    $( "#amount" ).val( "$" + $( "#slider2" ).slider( "value" ) );
     
 
-      function buildUrl(price){
-        $('#save').on('click', function(e){
-          var url = "http://0.0.0.0:3000/items?cat=" + $('#first_drop option:selected').text() + "&price=" + price;
-          console.log(url);
-          window.location.href = url;
-          $('#panel1').removeClass("active");
-        });
-      };
 
     $('.fancy-select').fancySelect();
-    var val = $( "#slider2" ).slider( "value" ) 
-    console.log(val);
+    // var val = $( "#slider2" ).slider( "value" ) 
+    // var url = "http://0.0.0.0:3000/items?cat=" + $('#first_drop option:selected').text() + "&price=" + val;
+    // console.log(url);
   });
 
-
+  function buildUrl(){
+    var val = $( "#slider2" ).slider( "value" ) 
+    var url = "http://0.0.0.0:3000/items?cat=" + $('#first_drop option:selected').text() + "&price=" + val;
+    // console.log(url);
+    window.location.href = url;
+    $('#panel1').removeClass("active");
+  };
 
 </script>
