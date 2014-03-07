@@ -12,6 +12,7 @@ StyleLust::Application.routes.draw do
   resources :likes
   resources :users
   resources :auths, only:[:create,:new,:index]
+  get '/hotPicks' => 'items#hotPicks'
 
 
 

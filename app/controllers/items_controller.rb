@@ -6,12 +6,12 @@ class ItemsController < ApplicationController
 		
 		respond_to do |format|
 			format.json { 
- 				get_hot_picks()
+ 				get_hot_picks(3)
  			}
-      format.html {
-				@items = limit_items
-	    }
-    end
+	      format.html {
+					@items = limit_items
+		    }
+	    end
 	end
 
 
@@ -45,6 +45,10 @@ class ItemsController < ApplicationController
 		
 	end
 
+	def hotPicks
+		get_hot_picks(20)
+	end
+
 private
 
 	def limit_items
@@ -58,10 +62,12 @@ private
 
 	end
 
-	def get_hot_picks
-		@items = Item.find_by_sql("SELECT i.id, i.name, i.price, i.category_id, i.brand_id, i.photo, i.click_url, COUNT(l.item_id) FROM items AS i LEFT OUTER JOIN likes AS l ON i.id = l.item_id WHERE l.is_like = 't' GROUP BY i.id, i.name, i.price, i.category_id, i.brand_id, i.photo, i.click_url ORDER BY COUNT(l.item_id) DESC LIMIT 3;") 
+
+	def get_hot_picks(how_many)
+		@items = Item.find_by_sql("SELECT i.id, i.name, i.price, i.category_id, i.brand_id, i.photo, i.click_url, COUNT(l.item_id) FROM items AS i LEFT OUTER JOIN likes AS l ON i.id = l.item_id WHERE l.is_like = 't' GROUP BY i.id, i.name, i.price, i.category_id, i.brand_id, i.photo, i.click_url ORDER BY COUNT(l.item_id) DESC LIMIT "+ how_many.to_s + ";") 
 		
 	end
 
+	
 
 end

@@ -1,0 +1,18 @@
+<h1>Hey, I'm a hot pick</h1>
+<div class="row" id="hotpicks">abc</div>
+
+<script id="hotpicks-template" type="text/x-handlebars-template">
+  {{#each hotpicks}}
+    <a href="{{click_url}}">
+      <div class="large-4 columns hotnow">
+        <img src="{{image_url}}" />
+        <h5>{{name}}</h5>
+      </div>
+    </a>
+  {{/each}}
+</script>
+<script type="text/javascript">
+  $(function() {
+    loadHotPicks20();
+  });
+</script>
