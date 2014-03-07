@@ -1,15 +1,13 @@
 <div id="a">
   <div class="large-12 small-12 columns">
 
-      <a href="" class="button" id="save">APPLY</a>
+      <a href="" class="button" id="save">APPLY</a> 
   </div>
 </div>
 
 
 <div class="large-12 small-12 columns">
 
-
-<h4>ONLY SHOW:</h4>
 <select class="fancy-select" id="first_drop">
   <option value="">Select</option>
   <%= options_for_select([['Tops', 1], ['Bottoms', 2], ['Dresses', 3], ['Outerwear', 4], ['Accessories', 5], ['Shoes', 6]], 1) %>
@@ -35,29 +33,29 @@
       $( "#slider2" ).slider({
         value:100,
         min: 20,
-        max: 500,
+        max: 5000,
         step: 20,
-        // animate: true,
+        animate: true,
         slide: function( event, ui ) {
           $( "#amount" ).val( "$" + ui.value );
           // console.log(ui.value);
-          buildUrl(ui.value);
+          // buildUrl(ui.value);
         }
       });
       // console.log($( "#slider" ).slider( "value" ));
       $( "#amount" ).val( "$" + $( "#slider2" ).slider( "value" ) );
     
 
-      function buildUrl(price){
+      // function buildUrl(){
         $('#save').on('click', function(e){
-            var url = "http://0.0.0.0:3000/items?cat=" + $('#first_drop option:selected').text() + "&price=" + price;
-            console.log(url);
-      window.location.href = url;
-        });
-      };
+          var url = "http://0.0.0.0:3000/items?cat=" + $('#first_drop option:selected').text() + "&price=" + $( "#slider2" ).slider( "value" );
+          console.log(url);
+          // window.location.href = url;
+        // });
+      }
 
     $('.fancy-select').fancySelect();
-    
+   
   });
 
 
