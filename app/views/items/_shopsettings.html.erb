@@ -39,23 +39,23 @@
         slide: function( event, ui ) {
           $( "#amount" ).val( "$" + ui.value );
           // console.log(ui.value);
-          buildUrl(ui.value);
+          // buildUrl(ui.value);
         }
       });
       // console.log($( "#slider" ).slider( "value" ));
       $( "#amount" ).val( "$" + $( "#slider2" ).slider( "value" ) );
     
 
-      function buildUrl(price){
+      // function buildUrl(){
         $('#save').on('click', function(e){
-            var url = "http://0.0.0.0:3000/items?cat=" + $('#first_drop option:selected').text() + "&price=" + price;
-            console.log(url);
-      window.location.href = url;
-        });
-      };
+          var url = "http://0.0.0.0:3000/items?cat=" + $('#first_drop option:selected').text() + "&price=" + $( "#slider2" ).slider( "value" );
+          console.log(url);
+          // window.location.href = url;
+        // });
+      }
 
     $('.fancy-select').fancySelect();
-    
+   
   });
 
 
