@@ -48,7 +48,7 @@
 
       function buildUrl(price){
         $('#save').on('click', function(e){
-            var url = "http://0.0.0.0:3000/items?cat=" + $('#first_drop option:selected').text() + "&price=" + price;
+            var url = "http://cryptic-castle-4589.herokuapp.com/items?cat=" + $('#first_drop option:selected').text() + "&price=" + price;
             console.log(url);
       window.location.href = url;
         });
