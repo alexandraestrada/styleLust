@@ -298,3 +298,23 @@ margin-bottom: 5%;
 /*yellow: background-color: rgba(255,247,204,1);
 yellow-gray:background-color: rgba(60,69,71,1);
 */
+
+/* ----------------------Modal--------------- */
+#myModal {
+	height: 800px;
+	margin-top: -310px;
+
+
+	
+}
+.iframe {
+	height: 100%;
+	width: 100%;
+	overflow: auto;
+	-webkit-overflow-scrolling:touch;
+
+}
+
+iframe, object, embed {
+	max-width:100%;
+}
