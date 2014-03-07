@@ -102,9 +102,22 @@ body.home {
 	position: relative;
 }
 
+/*fix this*/
+@-webkit-keyframes infinite-spinning {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
 #itemdeck {
 	padding-top: 90px;
 	overflow: hidden;
+	/*fix this*/
+	-webkit-animation: infinite-spinning 2s infinite;
+
 }
 
 label {
@@ -138,6 +151,12 @@ body.shop {
 	font-size: 1.3em;
 }
 
+.button-group {
+	left: 0px;
+	right: 0px;
+	text-align: center;
+}
+
 .lose {
 	background-color: rgb(255,77,66);
 	font-family: 'Marvel';
@@ -154,19 +173,9 @@ body.shop {
 	font-family: 'Marvel';
 }
 
-.shop-panel {
-  @include block-grid(
-  	$per-row: 3,
-    $spacing: 5px
-  );
-  width: 300px;
-  margin: 0 auto;
-}
-
 .product-details {
 	width: 482px;
 	height: 100px;
-	/*border: 1px solid red;*/
 	background-color: rgba(0,0,0,.7);
 	margin: 0 auto;
 	overflow: hidden;
@@ -182,11 +191,9 @@ body.shop {
 
 #myModal {
 	height: 800px;
-	margin-top: -310px;
-
-
-	
+	margin-top: -310px;	
 }
+
 .iframe {
 	height: 100%;
 	width: 100%;

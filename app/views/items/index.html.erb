@@ -20,10 +20,8 @@ $(function() {
       });
     });
 </script>
-<!-- Figure this out after merge -->
-<% if current_user %>
 
-<!-- Keep this for sure -->
+
 <body class="shop">
 <h1 class="play"><%= @items.first.category.name.upcase %></h1>
  <div class="row" id="swipe">
@@ -43,46 +41,22 @@ $(function() {
 
 	  </div>
 
-    <ul class="shop-panel">
-  		<li><%= link_to "LOSE", items_path(cat: params[:cat], price: params[:price], is_like: false), class: "button lose", method: 'post' %></li>
-  		<li class="show-for-small-only"><%= link_to "BUY",url,class: "button buy" %></li>
-  		<li class="show-for-medium-up">
+
+    <div class="buttongroup">
+        <%= link_to "LOSE", items_path(cat: params[:cat], price: params[:price], is_like: false), class: "button lose", method: 'post' %>
+
+  		<div class="show-for-small-only">
+        <%= link_to "BUY",url,class: "button buy" %>
+      </div>
+
+  		<div class="show-for-medium-up">
   			<%= link_to "BUY", '#myModal', 'data-reveal-id'=> "myModal", class: "button buy" %>
-  		</li> 
+  		</div> 
   		
-  		<li><%= link_to "LUST", items_path(cat: params[:cat], price: params[:price], is_like: true), class: "button lust", method: 'post' %>
-			</li>
-		</ul>
+        <%= link_to "LUST", items_path(cat: params[:cat], price: params[:price], is_like: true), class: "button lust", method: 'post' %>
+    </div>
+
 		 <%=render partial:'items/modal' %>
 
   </div>
 </body>
-
-<!-- Maybe Remove this -->
-
-
-<% else %>
-
-
-
-<body class="continue">
-
-	<div class="browse">
-		<%= link_to new_auth_path do %>
-		<div class="large-6 small-6 columns">
-		<h1 class="accent">L O G I N</h1><br>
-		<%= image_tag("login.svg", class: "img-circle img-thumbnail3") %>
-		</div>
-		<% end %>
-
-		<%= link_to new_user_path do %>
-		<div class="large-6 small-6 columns">
-		<h1 class="accent">S I G N U P</h1><br>
-		<%= image_tag("signup.svg", class: "img-circle img-thumbnail3") %>
-		<% end %>
-		</div>
-	</div>
-</body>
-
-
-<% end %>
