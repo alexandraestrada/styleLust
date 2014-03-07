@@ -180,6 +180,25 @@ body.shop {
 	font-size: 1em;
 }
 
+#myModal {
+	height: 800px;
+	margin-top: -310px;
+
+
+	
+}
+.iframe {
+	height: 100%;
+	width: 100%;
+	overflow: auto;
+	-webkit-overflow-scrolling:touch;
+
+}
+
+iframe, object, embed {
+	max-width:100%;
+}
+
 .shop-images {
 	max-height: 400px;
 }
@@ -313,4 +332,16 @@ yellow-gray:background-color: rgba(60,69,71,1);
 
 .favorites {
 	float: left;
+}
+
+#panel1 {
+	background-color: #333;
+}
+
+#save {
+	background-color: rgb(81,212,173);
+}
+
+#settings {
+	background-color: #333;
 }

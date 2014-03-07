@@ -38,16 +38,30 @@
       <ul class="off-canvas-list">
         <li><label>StyleLust</label></li>
         <% if current_user %>
+
         <li><%= link_to root_path do %>Home</li>
         <% end %>
         <li><%= link_to likedItems_path do %>Favorites</li>
         <% end %>
         <li><%= link_to items_path do %>Shop</li>
         <% end %>
+      
+        <li>
+          <dl class="accordion" data-accordion>
+            <dd>
+              <a href="#panel1" id="settings">Shop Settings</a>
+              <div id="panel1" class="content">
+
+                  <%= render partial: 'items/shopsettings' %>
+
+                </div>
+            </dd>
+          </dl>
+
+        </li>
+
         <li><a href="#">Invite</a></li>
-        <li><a>Likes</a></li>
-        <li><label>Settings</label></li>
-        <li><%= render partial: 'items/shopsettings' %></li>
+
         <% else %>
         <li><%= link_to "Sign in with Facebook", "/auth/facebook", id: "#sign_in" %></li>
         <li><%= link_to "Sign In", new_auth_path %></li>
