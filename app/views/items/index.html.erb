@@ -1,33 +1,3 @@
-<script>
-$(function() {      
-      //Enable swiping...
-      $("#swipe").swipe( {
-        //Generic swipe handler for all directions
-        swipeLeft:function(event, direction, distance, duration, fingerCount) {
-          console.log("You swiped " + direction );  
-          $.post('<%= items_path(cat: params[:cat], price: params[:price], is_like: false) %>', function(response) {
-          	location.href = location.href;
-          });
-        },
-        swipeRight:function(event, direction, distance, duration, fingerCount) {
-          console.log("You swiped " + direction );  
-          $.post('<%= items_path(cat: params[:cat], price: params[:price], is_like: true) %>', function(response) {
-          	location.href = location.href;
-          });
-        },
-        //Default is 75px, set to 0 for demo so any distance triggers swipe
-         threshold:50
-      });
-    });
-
-  $(function(){
-    $(".spin").click(function(){
-      $(".itemdeck").toggleClass("itemdeck-change");
-    });
-  });
-
-</script>
-
 
 <body class="shop">
 <h1 class="play"><%= @items.first.category.name.upcase %></h1>
@@ -47,7 +17,7 @@ $(function() {
 	  </div>
 
     <div class="shopbar">
-        <%= link_to "LOSE", items_path(cat: params[:cat], price: params[:price], is_like: false), class: "button lose spin", method: 'post' %>
+        <%= link_to "LOSE", items_path(cat: params[:cat], price: params[:price], is_like: false), class: "button lose", method: 'post' %>
 
   		<div class="show-for-small-only">
         <%= link_to "BUY",@items.first.click_url,class: "button buy" %>
@@ -57,11 +27,34 @@ $(function() {
   			<%= link_to "BUY", '#myModal', 'data-reveal-id'=> "myModal", class: "button buy" %>
   		</div> 
   		
-        <%= link_to "LUST", items_path(cat: params[:cat], price: params[:price], is_like: true), class: "button lust spin", method: 'post' %>
+        <%= link_to "LUST", items_path(cat: params[:cat], price: params[:price], is_like: true), class: "button lust", method: 'post' %>
     </div>
     
 		 <%=render partial:'items/modal' %>
 
   </div>
-      
+
+<script>
+$(function() {      
+      //Enable swiping...
+      $("#swipe").swipe( {
+        //Generic swipe handler for all directions
+        swipeLeft:function(event, direction, distance, duration, fingerCount) {
+          console.log("You swiped " + direction );  
+          $.post('<%= items_path(cat: params[:cat], price: params[:price], is_like: false) %>', function(response) {
+            location.href = location.href;
+          });
+        },
+        swipeRight:function(event, direction, distance, duration, fingerCount) {
+          console.log("You swiped " + direction );  
+          $.post('<%= items_path(cat: params[:cat], price: params[:price], is_like: true) %>', function(response) {
+            location.href = location.href;
+          });
+        },
+        //Default is 75px, set to 0 for demo so any distance triggers swipe
+         threshold:50
+      });
+    });
+
+</script>
 </body>
