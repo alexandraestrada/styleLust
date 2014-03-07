@@ -1,8 +1,6 @@
-<h1>Auths#new</h1>
-<p>Find me in app/views/auths/new.html.erb</p>
+<h1>Log In</h1>
 
 <div id="login">
-  Login
   <%= form_for @user, {url: auths_path } do |f| %>
     <%= f.label :email %>
     <%= f.text_field :email %><br />
