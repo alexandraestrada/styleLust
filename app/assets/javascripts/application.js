@@ -20,7 +20,7 @@
 //= require turbolinks
 //= require_tree .
 
-$(function(){ $(document).foundation(); $('.menu-icon').click(function(){ false });});
+$(function(){ $(document).foundation();});
 
 window.loadHotNow = function() {
  // AJAX call to get our list of things
