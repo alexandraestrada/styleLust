@@ -1,11 +1,32 @@
+<script>
+$(function() {      
+      //Enable swiping...
+      $("#swipe").swipe( {
+        //Generic swipe handler for all directions
+        swipeLeft:function(event, direction, distance, duration, fingerCount) {
+          console.log("You swiped " + direction );  
+          $.post('<%= items_path(cat: params[:cat], price: params[:price], is_like: false) %>', function(response) {
+          	location.href = location.href;
+          });
+        },
+        swipeRight:function(event, direction, distance, duration, fingerCount) {
+          console.log("You swiped " + direction );  
+          $.post('<%= items_path(cat: params[:cat], price: params[:price], is_like: true) %>', function(response) {
+          	location.href = location.href;
+          });
+        },
+        //Default is 75px, set to 0 for demo so any distance triggers swipe
+         threshold:50
+      });
+    });
+</script>
 <!-- Figure this out after merge -->
 <% if current_user %>
 
 <!-- Keep this for sure -->
 <body class="shop">
-
 <h1 class="play"><%= @items.first.category.name.upcase %></h1>
- <div class="row">
+ <div class="row" id="swipe">
  		<div class="deckcontainer large-12 small-12 columns">
 	    <div id="itemdeck">
 	      <% url = @items.first.click_url %>
