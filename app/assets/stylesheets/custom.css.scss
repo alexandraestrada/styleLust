@@ -20,6 +20,7 @@
 body {
 	text-align: center;
 	font-family: 'Raleway', sans-serif;
+	background-color: rgba(60,69,71,1);
 }
 
 .footer {
@@ -28,7 +29,7 @@ body {
 
 /* ----------------------HOMEPAGE---------------------------------- */
 
-body.home {
+div.home {
 	background-color: rgba(60,69,71,1);
 }
 
@@ -139,7 +140,7 @@ h1 {
 	color: rgb(81,212,173);
 }
 
-body.shop {
+div.shop {
 	background-image: url(dark_mosaic.png);
 	background-position: fixed;
 }
