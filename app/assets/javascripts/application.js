@@ -46,7 +46,7 @@ window.loadHotPicks20 = function() {
  // AJAX call to get our list of things
  $.ajax({
    type: 'GET',
-   url: 'http://localhost:3000/hotPicks.json',
+   url: 'http://0.0.0.0:3000/hotPicks.json',
    dataType: 'json'
  }).done(function(data) {
  	console.log(data)
