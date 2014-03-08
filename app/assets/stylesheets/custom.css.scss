@@ -51,6 +51,24 @@ h4 {
 	overflow: hidden;
 }
 
+#front-image {
+height:400px;
+width:100%;
+background-image: url(Hot_Heart.png);
+background-repeat: no-repeat;
+background-position: center 0px -170px;
+position: relative;
+background-size: cover;
+margin-bottom: 5%;
+}
+
+#b{
+height:250px;
+width:100%;
+background-color: rgba(135,144,145,1);
+margin-bottom: 5%;
+}
+
 .front {
 	position: relative;
 	margin-right: 40%;
@@ -92,6 +110,17 @@ h4 {
 	font-family: 'Raleway', sans-serif;
 	margin-top: 10px;
 	color: rgb(255,77,66);
+}
+
+#logo-small {
+	font-family: 'Raleway', sans-serif;
+	margin-top: 10px;
+	color: rgb(255,77,66);
+	color: white;
+	z-index: 999;
+	position: absolute;
+	margin-left: 20px;
+	margin-top: 60px;
 }
 
 .front-icons {
@@ -338,15 +367,6 @@ padding: 10px;
 }
 
 /* ----------------------TO BE ORGANIZED--------------- */
-
-
-
-#b{
-height:250px;
-width:100%;
-background-color: rgba(135,144,145,1);
-margin-bottom: 5%;
-}
 
 .menu {
 	height: 20px;
