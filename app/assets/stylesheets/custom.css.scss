@@ -33,6 +33,15 @@ div.home {
 	background-color: rgba(60,69,71,1);
 }
 
+h4 {
+	color: rgba(255,247,204,1);
+	font-family: 'Raleway', sans-serif;
+}
+
+.welcometext {
+	color: #bbb;
+}
+
 /* ----------------------HOMEPAGE DESKTOP--------------- */
 
 .banner {
@@ -160,7 +169,6 @@ div.shop {
 .shopbar {
 	width: 400px;
 	height: 60px;
-	/*border: 1px solid lime;*/
 	overflow: auto;
 	margin: 0 auto;
 	position: relative;
@@ -399,3 +407,11 @@ yellow-gray:background-color: rgba(60,69,71,1);
 }
 
 $price-item-align: left;
+
+/* ----------------------SIGN UP/IN---------------------------------- */
+.login {
+	width: 300px;
+	height: 500px;
+	border: 1px solid pink;
+	margin: 0 auto;
+}
