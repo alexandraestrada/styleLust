@@ -11,7 +11,7 @@
           <h1 class="title">StyleLust</h1>
         <% end %>
       </section>     
-    </nav>
+    
 
     <section class="right-small">
           <%= image_tag("user.svg", class: "user right-off-canvas-toggle") %>
@@ -43,13 +43,11 @@
         <% end %>
         <li><%= link_to likedItems_path do %>Favorites</li>
         <% end %>
-        <li><%= link_to items_path do %>Shop</li>
-        <% end %>
       
         <li>
           <dl class="accordion" data-accordion>
             <dd>
-              <a href="#panel1" id="settings">Shop Settings</a>
+              <a href="#panel1" id="settings">Shop</a>
               <div id="panel1" class="content">
 
                   <%= render partial: 'items/shopsettings' %>
@@ -60,7 +58,6 @@
 
         </li>
 
-        <li><a href="#">Invite</a></li>
 
         <% else %>
         <li><%= link_to "Sign in with Facebook", "/auth/facebook", id: "#sign_in" %></li>
@@ -80,26 +77,28 @@
 
   <a class="exit-off-canvas"></a>
 
+  
     <!-- Footer -->
   
-  <footer class="row">
-    <div class="large-12 columns">
-      <hr />
-      <div class="row">
-        <div class="large-6 columns">
-          <p class="footer">© 2014 StyleLust. All Rights Reserved.</p>
+    <footer class="row">
+      <div class="large-12 columns">
+        <hr />
+        <div class="row">
+          <div class="large-6 columns">
+            <p class="footer">© 2014 StyleLust. All Rights Reserved.</p>
+          </div>
+          <div class="large-6 columns">
+            <ul class="inline-list right">
+              <li><a href="#" class="footer">About</a></li>
+              <li><a href="#" class="footer">API</a></li>
+              <li><a href="#" class="footer">Contact</a></li>
+              <li><a href="#" class="footer">Terms</a></li>
+            </ul>
+          </div>
         </div>
-        <div class="large-6 columns">
-          <ul class="inline-list right">
-            <li><a href="#" class="footer">About</a></li>
-            <li><a href="#" class="footer">API</a></li>
-            <li><a href="#" class="footer">Contact</a></li>
-            <li><a href="#" class="footer">Terms</a></li>
-          </ul>
-        </div>
-      </div>
-    </div> 
-  </footer>
+      </div> 
+    </footer>
 
   </div>
 </div>
+  

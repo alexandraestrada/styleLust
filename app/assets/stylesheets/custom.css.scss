@@ -20,6 +20,7 @@
 body {
 	text-align: center;
 	font-family: 'Raleway', sans-serif;
+	background-color: rgba(60,69,71,1);
 }
 
 .footer {
@@ -28,8 +29,17 @@ body {
 
 /* ----------------------HOMEPAGE---------------------------------- */
 
-body.home {
+div.home {
 	background-color: rgba(60,69,71,1);
+}
+
+h4 {
+	color: rgba(255,247,204,1);
+	font-family: 'Raleway', sans-serif;
+}
+
+.welcometext {
+	color: #bbb;
 }
 
 /* ----------------------HOMEPAGE DESKTOP--------------- */
@@ -102,10 +112,28 @@ body.home {
 	position: relative;
 }
 
-#itemdeck {
+/*fix this*/
+@-webkit-keyframes infinite-spinning {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+.itemdeck {
 	padding-top: 90px;
 	overflow: hidden;
+
 }
+
+.itemdeck-change {
+	/*fix this*/
+	-webkit-animation: infinite-spinning 2s;
+
+}
+
 
 label {
 	font-family: 'Raleway', sans-serif;
@@ -121,7 +149,7 @@ h1 {
 	color: rgb(81,212,173);
 }
 
-body.shop {
+div.shop {
 	background-image: url(dark_mosaic.png);
 	background-position: fixed;
 }
@@ -138,35 +166,41 @@ body.shop {
 	font-size: 1.3em;
 }
 
+.shopbar {
+	width: 400px;
+	height: 60px;
+	overflow: auto;
+	margin: 0 auto;
+	position: relative;
+}
+
 .lose {
 	background-color: rgb(255,77,66);
 	font-family: 'Marvel';
+	right: 101px;
 }
 
 .lust {
 	background-color: rgb(81,212,173);
 	font-family: 'Marvel';
+	float: right;
+	position: absolute;
+	right: 55px;
+	top: 0px;
 }
 
 .buy {
 	background-color: rgba(81,212,173, 0.1);
 	border: 2px rgb(81,212,173) solid;
 	font-family: 'Marvel';
-}
-
-.shop-panel {
-  @include block-grid(
-  	$per-row: 3,
-    $spacing: 5px
-  );
-  width: 300px;
-  margin: 0 auto;
+	height: 52px;
+	left: -3px;
+	top:-72px;
 }
 
 .product-details {
 	width: 482px;
 	height: 100px;
-	/*border: 1px solid red;*/
 	background-color: rgba(0,0,0,.7);
 	margin: 0 auto;
 	overflow: hidden;
@@ -182,11 +216,18 @@ body.shop {
 
 #myModal {
 	height: 800px;
-	margin-top: -310px;
-
-
-	
+	margin-top: -310px;	
 }
+
+.myModal {
+	height: 800px;
+	margin-top: -310px;
+}
+
+.favorites {
+	float: left;
+}
+
 .iframe {
 	height: 100%;
 	width: 100%;
@@ -214,7 +255,7 @@ iframe, object, embed {
 			position: relative;
 		}
 
-		#itemdeck {
+		.itemdeck {
 			margin: 0 auto;
 			overflow: hidden;
 			max-width: 65%;
@@ -223,23 +264,33 @@ iframe, object, embed {
 			
 		}
 
+		.shopbar {
+			width: 400px;
+			height: 60px;
+			overflow: auto;
+			margin: 0 auto;
+			position: relative;
+			top: -250px;
+
+		}
+
 		.lose {
 			background-color: rgb(255,77,66);
 			font-family: 'Marvel';
-			top: -250px;
+			right: 145px;
 		}
 
 		.lust {
 			background-color: rgb(81,212,173);
 			font-family: 'Marvel';
-			top: -250px;
+			right: 96px;
 		}
 
 		.buy {
 			background-color: rgba(81,212,173, 0.1);
 			border: 2px rgb(81,212,173) solid;
 			font-family: 'Marvel';
-			top: -250px;
+			left: -45px;
 		}
 
 		.product-details {
@@ -304,7 +355,7 @@ margin-bottom: 5%;
 }
 
 .user {
-	padding-top: 10px;
+	padding-bottom: 10px;
 	height: 35px;
 	width: 25px;
 }
@@ -330,10 +381,6 @@ margin-bottom: 5%;
 yellow-gray:background-color: rgba(60,69,71,1);
 */
 
-.favorites {
-	float: left;
-}
-
 #panel1 {
 	background-color: #333;
 }
@@ -344,4 +391,27 @@ yellow-gray:background-color: rgba(60,69,71,1);
 
 #settings {
 	background-color: #333;
+	font-family: 'Raleway';
+}
+
+/* ----------------------FAVORITES---------------------------------- */
+.pricing-table .title {
+	background-color: rgb(81,212,173);
+	color: black;
+	font-family: 'Raleway';
+	font-weight: 400;
+}
+
+.fave-buy-btn {
+	background-color: rgb(255,77,66);
+}
+
+$price-item-align: left;
+
+/* ----------------------SIGN UP/IN---------------------------------- */
+.login {
+	width: 300px;
+	height: 500px;
+	border: 1px solid pink;
+	margin: 0 auto;
 }

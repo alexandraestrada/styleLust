@@ -1,15 +1,22 @@
-<h1>Favorites:<h1>
-
+<div class="shop">
+<h1 class="play">FAVORITES</h1>
 
 <div class="row">
   <% current_user.liked_items.each do |item| %>
     <div class="large-4 columns favorites">
       <ul class="pricing-table test">
         <li class="title product-name"><%= item.name %></li>
-        <li class="price uniform"><%= link_to image_tag(item.photo), item.click_url %></li>
-        <li class="bullet-item">$<%= item.price %></li>
-        <li class="cta-button"><a class="button" href="#">Buy Now</a></li>
+        <li class="price uniform"><%= link_to image_tag(item.photo), '#myModal' + item.id.to_s, 'data-reveal-id'=> ("myModal" + item.id.to_s) %></li>
+        <li class="bullet-item"><%= number_to_currency(item.price) %></li>
+        <li class="cta-button"><%= link_to "BUY",'#myModal' + item.id.to_s, 'data-reveal-id'=> ("myModal" + item.id.to_s), class: "button fave-buy-btn" %></li>
       </ul>
     </div>
+    <div id="myModal<%= item.id %>" class="reveal-modal myModal" data-reveal>
+      <a class="close-reveal-modal">&#215;</a>
+      <iframe class="iframe" src="<%= item.click_url.to_s %>"> </iframe>
+      
+    </div>
   <% end %>
+</div>
+
 </div>

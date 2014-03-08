@@ -20,13 +20,15 @@
 //= require turbolinks
 //= require_tree .
 
-$(function(){ $(document).foundation(); });
+$(function(){ $(document).foundation();});
 
 window.loadHotPicks3 = function() {
  // AJAX call to get our list of things
  $.ajax({
    type: 'GET',
-   url: 'http://localhost:3000/items.json',
+
+   url: 'http://fathomless-harbor-2129.herokuapp.com/items.json',
+
    dataType: 'json'
  }).done(function(data) {
  	console.log(data);
