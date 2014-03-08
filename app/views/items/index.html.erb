@@ -35,16 +35,15 @@ $(function() {
  <div class="row" id="swipe">
  		<div class="deckcontainer large-12 small-12 columns">
 	    <div class="itemdeck">
-	      <% url = @items.first.click_url %>
-        <% image = @items.first.photo %>
-        <%= link_to image_tag(image) , url %> 
+        <%= link_to image_tag(@items.first.photo) , '#myModal', 'data-reveal-id'=> "myModal", class: "show-for-medium-up"%> 
+        <%= link_to image_tag(@items.first.photo) , @items.first.click_url, class: "show-for-small-only"%> 
 	      <br>
 	    </div>
 
 	    <div class="product-details">
 	    	<%= @items.first.name %>
 	    	<br>
-        $<%= @items.first.price %>
+        <%= number_to_currency(@items.first.price) %>
       </div>
 
 	  </div>
@@ -53,7 +52,7 @@ $(function() {
         <%= link_to "LOSE", items_path(cat: params[:cat], price: params[:price], is_like: false), class: "button lose spin", method: 'post' %>
 
   		<div class="show-for-small-only">
-        <%= link_to "BUY",url,class: "button buy" %>
+        <%= link_to "BUY",@items.first.click_url,class: "button buy" %>
       </div>
 
   		<div class="show-for-medium-up">
