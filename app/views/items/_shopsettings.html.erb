@@ -48,13 +48,13 @@
 
     $('.fancy-select').fancySelect();
     // var val = $( "#slider2" ).slider( "value" ) 
-    // var url = "http://cryptic-castle-4589.herokuapp.com/items?cat=" + $('#first_drop option:selected').text() + "&price=" + val;
+    // var url = "http://fathomless-harbor-2129.herokuapp.com/items?cat=" + $('#first_drop option:selected').text() + "&price=" + val;
     // console.log(url);
   });
 
   function buildUrl(){
     var val = $( "#slider2" ).slider( "value" ) 
-    var url = "http://cryptic-castle-4589.herokuapp.com/items?cat=" + $('#first_drop option:selected').text() + "&price=" + val;
+    var url = "http://fathomless-harbor-2129.herokuapp.com/items?cat=" + $('#first_drop option:selected').text() + "&price=" + val;
     // console.log(url);
     window.location.href = url;
     $('#panel1').removeClass("active");
