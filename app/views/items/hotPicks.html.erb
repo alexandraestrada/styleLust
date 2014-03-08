@@ -1,5 +1,41 @@
-<h1>Hot Picks</h1>
-<div class="row" id="hotpicks">abc</div>
+
+
+<body class="shop">
+<h1 class="play">Hot Picks</h1>
+
+<div class="row" id="hotpicks"></div>
+</body>
+  <script id="hotpicks-template" type="text/x-handlebars-template">
+    {{#each hotpicks}}
+    <a href="{{click_url}}">
+    <div class="large-4 columns favorites">
+     
+      <ul class="pricing-table test">
+     
+        <li class="title product-name">{{name}}</li>
+        <li class="price uniform"><img src='{{image_url}}' /></li>
+        <li class="price uniform bullet-item">${{price}}.00</li>
+       <a href="{{click_url}}" class="button fave-buy-btn">
+       <li class="cta-button"></li></a> 
+     
+      </ul>
+    </div>
+      </a>
+       {{/each}}
+  
+  </script>
+
+  <script type="text/javascript">
+  $(function() {
+    loadHotPicks20();
+  });
+</script>
+
+
+
+
+<!--  <h1>Hot Picks</h1>
+<div class="row" id="hotpicks"></div>
 
 <script id="hotpicks-template" type="text/x-handlebars-template">
   {{#each hotpicks}}
@@ -15,4 +51,4 @@
   $(function() {
     loadHotPicks20();
   });
-</script>
+</script> -->
