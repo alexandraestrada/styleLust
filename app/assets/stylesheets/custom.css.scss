@@ -32,6 +32,15 @@ body.home {
 	background-color: rgba(60,69,71,1);
 }
 
+h4 {
+	color: rgba(255,247,204,1);
+	font-family: 'Raleway', sans-serif;
+}
+
+.welcometext {
+	color: #bbb;
+}
+
 /* ----------------------HOMEPAGE DESKTOP--------------- */
 
 .banner {
@@ -159,7 +168,6 @@ body.shop {
 .shopbar {
 	width: 400px;
 	height: 60px;
-	/*border: 1px solid lime;*/
 	overflow: auto;
 	margin: 0 auto;
 	position: relative;
