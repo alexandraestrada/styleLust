@@ -1,5 +1,6 @@
 StyleLust::Application.routes.draw do
 
+  get "/about" => "items#about", as: :about
   get "items/likedItems" => "items#likedItems", as: :likedItems
   get "sessions/create"
   get "sessions/destroy"

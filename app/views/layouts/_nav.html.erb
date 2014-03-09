@@ -68,7 +68,8 @@
         <li><%= link_to "Sign in with Facebook", "/auth/facebook", id: "#sign_in" %></li>
         <li class="show-for-small-only"><%= link_to "Sign In", new_auth_path %></li>
         <li class="show-for-medium-up"><%= link_to "Sign In", "#loginModal", 'data-reveal-id' => "loginModal" %></li>
-        <li><%= link_to "Sign Up", new_user_path %></li>
+        <li class="show-for-small-only"><%= link_to "Sign Up", new_user_path %></li>
+        <li class="show-for-medium-up"><%= link_to "Sign Up", "#signupModal", 'data-reveal-id' => "signupModal" %></li>
         <% end %>
       </ul>
 
@@ -98,10 +99,9 @@
           </div>
           <div class="large-6 columns">
             <ul class="inline-list right">
-              <li><a href="#" class="footer">About</a></li>
-              <li><a href="#" class="footer">API</a></li>
-              <li><a href="#" class="footer">Contact</a></li>
-              <li><a href="#" class="footer">Terms</a></li>
+              <li><%= link_to "About", about_path, class: "footer" %></li>
+              <li><a href="http://0.0.0.0:3000/hotPicks.json" class="footer">API</a></li>
+              <li><%= link_to "Contact", about_path, class: "footer" %></li>
             </ul>
           </div>
         </div>

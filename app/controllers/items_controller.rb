@@ -45,6 +45,10 @@ class ItemsController < ApplicationController
 		
 	end
 
+	def about
+		render file: 'app/views/layouts/about.html.erb'
+	end
+
 	def hotPicks
 		get_hot_picks(20)
 	end
