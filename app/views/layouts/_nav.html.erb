@@ -30,9 +30,11 @@
       	<% else %>
         <li><label>StyleLust</label></li>
       	<li><%= link_to "Sign in with Facebook", "/auth/facebook", id: "#sign_in" %></li>
-      	<li><%= link_to "Sign In", new_auth_path %></li>
-      	<li><%= link_to "Sign Up", new_user_path %></li>
-      	<% end %>
+      	<li class="show-for-small-only"><%= link_to "Sign In", new_auth_path %></li>
+        <li class="show-for-medium-up"><%= link_to "Sign In", "#loginModal", 'data-reveal-id' => "loginModal" %></li>
+      	<li class="show-for-small-only"><%= link_to "Sign Up", new_user_path %></li>
+        <li class="show-for-medium-up"><%= link_to "Sign Up", "#signupModal", 'data-reveal-id' => "signupModal" %></li>
+        <% end %>
       </ul>
     </aside>
 
@@ -42,6 +44,8 @@
         <% if current_user %>
 
         <li><%= link_to root_path do %>Home</li>
+        <% end %>
+        <li><%= link_to hotPicks_path do %>Hot Picks</li>
         <% end %>
         <li><%= link_to likedItems_path do %>Favorites</li>
         <% end %>
@@ -60,13 +64,16 @@
 
         </li>
 
-
         <% else %>
         <li><%= link_to "Sign in with Facebook", "/auth/facebook", id: "#sign_in" %></li>
-        <li><%= link_to "Sign In", new_auth_path %></li>
+        <li class="show-for-small-only"><%= link_to "Sign In", new_auth_path %></li>
+        <li class="show-for-medium-up"><%= link_to "Sign In", "#loginModal", 'data-reveal-id' => "loginModal" %></li>
         <li><%= link_to "Sign Up", new_user_path %></li>
         <% end %>
       </ul>
+
+      <%=render partial:'auths/login' %>
+      <%=render partial:'users/signup', controller: 'auths', action: 'new' %>
     </aside>
 
     <section class="main-section">

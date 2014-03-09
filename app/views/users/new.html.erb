@@ -1,11 +1,11 @@
-	<h1>CREATE YOUR ACCOUNT</h1>
+<div class="login-mobile">
+<h2 id="logo">Create Your Account</h1>
 
-<div class="login">
 	<%= form_for @user do |user| %>
 		<%= user.text_field :first_name, :placeholder => "First name" %><br>
 		<%= user.text_field :email, :placeholder => "email" %><br>
 		<%= user.password_field :password, :placeholder => "Enter password" %><br>
 		<%= user.submit "Submit", class: "button fave-buy-btn" %>
 	<% end %>
-</div>
 
+</div>

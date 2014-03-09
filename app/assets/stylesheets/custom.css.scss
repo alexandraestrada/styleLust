@@ -39,6 +39,15 @@ h4 {
 	color: #bbb;
 }
 
+#loginModal {
+	background-color: rgba(60,69,71,1);
+}
+
+#loginHeader {
+	font-family: 'Raleway', sans-serif;
+	color: rgb(255,77,66);
+}
+
 /* ----------------------HOMEPAGE DESKTOP--------------- */
 
 .parallax-wrapper {
@@ -62,6 +71,7 @@ background-size: cover;
 	#front-image {
 		margin-top: 14%;
 		margin-bottom: 5%;
+		height: 500px;
 	}
 }
 
@@ -516,6 +526,23 @@ $price-item-align: left;
 .login {
 	width: 300px;
 	height: 500px;
-	border: 1px solid pink;
+	/*border: 1px solid pink;*/
 	margin: 0 auto;
+}
+
+.login-mobile {
+	width: 250px;
+	height: 450px;
+	overflow: hidden;
+	/*border: 1px solid pink;*/
+	margin: 0 auto;
+	position: relative;
+	left: 0px;
+	right: 0px;
+	clear: both;
+	margin-bottom: 50px;
+}
+
+label {
+	color: rgb(255,77,66);
 }
