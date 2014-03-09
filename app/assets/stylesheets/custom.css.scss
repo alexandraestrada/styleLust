@@ -52,12 +52,9 @@ h4 {
 }
 
 #front-image {
-height:400px;
+height:415px;
 width:100%;
 background-image: url(Hot_Heart.png);
-background-repeat: no-repeat;
-background-position: center 0px -170px;
-position: relative;
 background-size: cover;
 margin-bottom: 5%;
 }
@@ -132,6 +129,17 @@ margin-bottom: 5%;
 	width: 100%;
 	height:500px;
 	border: 2px solid blue;
+}
+
+img.desaturate { 
+	-webkit-filter: grayscale(100%);
+	-moz-filter: grayscale(100%);
+	filter: grayscale(100%);
+}
+
+img.desaturate:hover {
+	filter: none;
+	-webkit-filter: grayscale(0%);
 }
 
 /* ----------------------SHOP---------------------------------- */
@@ -381,7 +389,6 @@ padding: 10px;
 }
 
 .user {
-	padding-bottom: 10px;
 	height: 35px;
 	width: 25px;
 }
