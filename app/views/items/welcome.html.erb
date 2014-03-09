@@ -1,6 +1,4 @@
-<div class="home">
-
-<div class="section">
+<!-- <div class="home"> -->
 
   <div class="show-for-medium-up">
     <div class="row">
@@ -16,63 +14,60 @@
  
 <!-- First Band (Weekend Update) -->
 
-  <div id="front-image">
-  </div>
+  <div id="front-image"></div>
 
 
 <!-- Three-up Content Blocks -->
-<div class="row">
+  <div class="parallax-wrapper">
+    <div class="row">
 
-  <div class="large-4 columns">
-    <div class="icon-info" data-tooltip data-options="disable_for_touch:true" title= "Discover new fashion styles and trends from the hottest brands.">
-      <%= image_tag("discover.svg", class: "front-icons expandOpen") %>
+      <div class="large-4 columns">
+        <div class="icon-info" data-tooltip data-options="disable_for_touch:true" title= "Discover new fashion styles and trends from the hottest brands.">
+          <%= image_tag("discover.svg", class: "front-icons expandOpen") %>
+        </div>
+          <h4>Discover</h4>
+      </div>
+
+      <div class="large-4 columns">
+        <div class="icon-info" data-tooltip data-options="disable_for_touch:true" title= "Share your lookbooks with your friends on Facebook or Instagram.">
+          <%= image_tag("share.svg", class: "front-icons expandOpen") %>
+        </div>
+          <h4>Share</h4>
+      </div>
+
+      <div class="large-4 columns">
+        <div class="icon-info" data-tooltip data-options="disable_for_touch:true" title= "Buy your favorite items from hundreds of brands in one location.">
+          <%= image_tag("shop.svg", class: "front-icons expandOpen") %>
+        </div>
+          <h4>Shop</h4>
+      </div>
+      
     </div>
-      <h4>Discover</h4>
-  </div>
 
-  <div class="large-4 columns">
-    <div class="icon-info" data-tooltip data-options="disable_for_touch:true" title= "Share your lookbooks with your friends on Facebook or Instagram.">
-      <%= image_tag("share.svg", class: "front-icons expandOpen") %>
-    </div>
-      <h4>Share</h4>
-  </div>
-
-  <div class="large-4 columns">
-    <div class="icon-info" data-tooltip data-options="disable_for_touch:true" title= "Buy your favorite items from hundreds of brands in one location.">
-      <%= image_tag("shop.svg", class: "front-icons expandOpen") %>
-    </div>
-      <h4>Shop</h4>
-  </div>
-  
-</div>
-
-<hr id="cta" />
-<% if current_user %>
-            
-  <%= link_to items_path do %>
-<div id="explore">Explore Now</div><% end %>
-<% else %>
-  <%= link_to new_auth_path do %>
-<div id="explore">Explore Now</div><% end %>
-<% end %>
+    <hr id="cta" />
+    <% if current_user %>
+                
+      <%= link_to items_path do %>
+    <div id="explore">Explore Now</div><% end %>
+    <% else %>
+      <%= link_to new_auth_path do %>
+    <div id="explore">Explore Now</div><% end %>
+    <% end %>
 
 
 <!-- Hot Now -->
 
 
-<!-- Three-up Content Blocks -->
-
-<%=link_to hotPicks_path do %>
+    <%=link_to hotPicks_path do %>
 
 
-<h1 id="logo">HOT NOW</h1>
-<div class="row" id="hotnow"></div>
+    <h1 id="logo">HOT NOW</h1>
+    <div class="row" id="hotnow"></div>
 
-<%end%>
+    <%end%>
 
-</div>
-
-
+  </div>
+<!-- </div> -->
 
 <script id="hotnow-template" type="text/x-handlebars-template">
   {{#each items}}
@@ -87,7 +82,18 @@
 <script type="text/javascript">
   $(function() {
     loadHotPicks3();
-  });
-</script>
+  
 
-</div>
+
+
+  $(window).bind('scroll',function(e){
+      parallaxScroll();
+  });
+ 
+  function parallaxScroll(){
+    var scrolled = $(window).scrollTop();
+
+    $('.parallax-wrapper').css('top',(0-(scrolled*.9))+'px');
+  }
+});
+</script>

@@ -17,6 +17,7 @@
 
 /* ----------------------APPLICATION-------------------------------- */
 
+
 body {
 	text-align: center;
 	font-family: 'Raleway', sans-serif;
@@ -44,13 +45,21 @@ h4 {
 
 /* ----------------------HOMEPAGE DESKTOP--------------- */
 
+.parallax-wrapper {
+	width: 100%;
+	background-color: rgba(60,69,71,1);
+	position: relative;
+	padding-top: 50px;
+	z-index: 3;
+	/*keep an eye on this*/
+	margin-bottom: -145px;
+}
 
 #front-image {
 height:415px;
 width:100%;
 background-image: url(Hot_Heart.png);
 background-size: cover;
-margin-bottom: 3%;
 }
 
 @media only screen and (max-width: 40em) {
@@ -93,7 +102,7 @@ margin-bottom: 3%;
 	margin-top: 10px;
 	color: rgb(255,77,66);
 	color: white;
-	z-index: 2;
+	z-index: 4;
 	position: absolute;
 	margin-left: 20px;
 	margin-top: 60px;
@@ -101,7 +110,7 @@ margin-bottom: 3%;
 
 .front-icons {
 	height: 200px;
-	width: 100%;
+	width: 100%;	
 }
 
 .front-icons:hover {
