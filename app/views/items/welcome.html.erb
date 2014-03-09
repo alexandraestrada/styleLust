@@ -17,61 +17,31 @@
 <!-- First Band (Weekend Update) -->
 
   <div id="front-image">
-
-
-    <% if !current_user %>
-    <div class="front">
-      <%= link_to "SIGN UP NOW", new_user_path, class: "button", id: "signup" %>
-      <%= link_to "SIGN IN", new_auth_path, class: "button", id: "signin" %>
-    </div>
-    <% end %>
   </div>
-
-
-
-
-
-<!-- First Band (OG) -->
-<!-- <div class="show-for-medium-up">
-  <div id="b">
-    <%#= image_tag("girl2.png", class: "girl2") %>
-    <p class="banner">
-      Get ridiculously good looking<br>
-      with our Top trends & Best deals.
-    </p>
-    <#% if !current_user %>
-    <div class="front">
-      <%#= link_to "SIGN UP NOW", new_user_path, class: "button", id: "signup" %>
-      <%#= link_to "SIGN IN", new_auth_path, class: "button", id: "signin" %>
-    </div>
-    <#% end %>
-  </div>
-
-</div> -->
 
 
 <!-- Three-up Content Blocks -->
 <div class="row">
 
   <div class="large-4 columns">
-    <div data-tooltip data-options="disable_for_touch:false" title= "Discover new fashion styles and trends from the hottest brands.">
-      <%= image_tag("discover.svg", class: "front-icons") %>
+    <div class="icon-info" data-tooltip data-options="disable_for_touch:true" title= "Discover new fashion styles and trends from the hottest brands.">
+      <%= image_tag("discover.svg", class: "front-icons expandOpen") %>
+    </div>
       <h4>Discover</h4>
-    </div>
   </div>
 
   <div class="large-4 columns">
-    <div data-tooltip data-options="disable_for_touch:false" title= "Share your lookbooks with your friends on Facebook or Instagram.">
-      <%= image_tag("share.svg", class: "front-icons") %>
+    <div class="icon-info" data-tooltip data-options="disable_for_touch:true" title= "Share your lookbooks with your friends on Facebook or Instagram.">
+      <%= image_tag("share.svg", class: "front-icons expandOpen") %>
+    </div>
       <h4>Share</h4>
-    </div>
   </div>
 
   <div class="large-4 columns">
-    <div data-tooltip data-options="disable_for_touch:false" title= "Buy your favorite items from hundreds of brands in one location.">
-      <%= image_tag("shop.svg", class: "front-icons") %>
-      <h4>Shop</h4>
+    <div class="icon-info" data-tooltip data-options="disable_for_touch:true" title= "Buy your favorite items from hundreds of brands in one location.">
+      <%= image_tag("shop.svg", class: "front-icons expandOpen") %>
     </div>
+      <h4>Shop</h4>
   </div>
   
 </div>
