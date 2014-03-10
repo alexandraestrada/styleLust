@@ -277,8 +277,8 @@ img.desaturate:hover {
 /*EXPERIMENT*/
 .itemdeck-change {
 	-webkit-animation: slideOutLeft 2s;
-	width: 485px;
-	height: 485px;
+	width: 450px;
+	height: 450px;
 	background-color: white;
 	margin: 0 auto;
 }
@@ -344,7 +344,7 @@ div.shop {
 	font-family: 'Marvel';
 	height: 52px;
 	left: -3px;
-	top:-72px;
+	top:-71px;
 }
 
 .product-details {
@@ -389,8 +389,53 @@ iframe, object, embed {
 	max-height: 400px;
 }
 
+/*rotateOutUpLeft*/
+@-webkit-keyframes rotateOutUpLeft {
+  0% {
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
 
+  100% {
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    opacity: 0;
+  }
+}
 
+@keyframes rotateOutUpLeft {
+  0% {
+    -webkit-transform-origin: left bottom;
+    -ms-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform-origin: left bottom;
+    -ms-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    opacity: 0;
+  }
+}
+
+.rotateOutUpLeft {
+  -webkit-animation-name: rotateOutUpLeft;
+  animation-name: rotateOutUpLeft;
+}
+
+/*SLIDEOUTLEFT*/
 
 @-webkit-keyframes slideOutLeft {
   0% {
@@ -514,15 +559,7 @@ iframe, object, embed {
 	}
 
 }
-/* ----------------------NAV------------------------ */
 
-/*.favorites {
-	float: none;
-}
-
-.favorites:last-child {
-	float: left;
-}*/
 /* ----------------------SETTINGS---------------------------------- */
 
 div#a{
@@ -559,8 +596,16 @@ padding: 10px;
     height:100%;   
 }
 
-.main-section {
+/*.favorites {
+	float: none;
+}
 
+.favorites:last-child {
+	float: left;
+}*/
+
+.main-section {
+	height: 1050px;
 }
 /* ----------------------TO BE ORGANIZED--------------- */
 
