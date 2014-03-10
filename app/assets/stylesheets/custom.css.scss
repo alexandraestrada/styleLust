@@ -71,11 +71,20 @@ background-image: url(Hot_Heart.png);
 background-size: cover;
 }
 
+.main-section {
+	height: 1050px;
+}
+
+
+
 @media only screen and (max-width: 40em) {
 	#front-image {
 		margin-top: 14%;
 		margin-bottom: 5%;
 		height: 500px;
+	}
+	#hotnow {
+		margin-left: 75px;
 	}
 }
 
@@ -440,6 +449,7 @@ iframe, object, embed {
 	font-family: 'Marvel';
 	color: rgb(81,212,173);
 	}
+	
 
 }
 
@@ -526,6 +536,13 @@ yellow-gray:background-color: rgba(60,69,71,1);
 
 $price-item-align: left;
 
+@media only screen and (max-width: 40em) {
+
+	.pricing-table {
+		margin-left: 75px;
+	}
+}
+
 /* ----------------------SIGN UP/IN---------------------------------- */
 .login {
 	width: 300px;
@@ -556,3 +573,5 @@ label {
 	margin-top: 20px;
 	width: 600px;
 }
+
+
