@@ -27,7 +27,7 @@
   			<%= link_to "BUY", '#myModal', 'data-reveal-id'=> "myModal", class: "button buy" %>
   		</div> 
   		
-        <%= link_to "LUST", items_path(cat: params[:cat], price: params[:price], is_like: true), class: "button lust", method: 'post' %>
+        <%= link_to "LUST", items_path(cat: params[:cat], price: params[:price], is_like: true), class: "button lust slideOutRight", method: 'post' %>
     </div>
     
 		 <%=render partial:'items/modal' %>
@@ -58,7 +58,13 @@ $(function() {
 
       $(function(){
         $(".slideOutLeft").click(function(){
-          $(".itemdeck").toggleClass("itemdeck-change");
+          $(".itemdeck").toggleClass("itemdeck-left");
+        });
+      });
+
+      $(function(){
+        $(".slideOutRight").click(function(){
+          $(".itemdeck").toggleClass("itemdeck-right");
         });
       });
 

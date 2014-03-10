@@ -139,8 +139,8 @@ h5 {
 	animation-name: expandOpen;
 	-webkit-animation-name: expandOpen;	
 
-	animation-duration: 1.2s;	
-	-webkit-animation-duration: 1.2s;
+	animation-duration: 1.05s;	
+	-webkit-animation-duration: 1.05s;
 
 	animation-timing-function: ease-out;	
 	-webkit-animation-timing-function: ease-out;	
@@ -168,13 +168,13 @@ h5 {
 
 @-webkit-keyframes expandOpen {
 	0% {
-		-webkit-transform: scale(1.8);		
+		-webkit-transform: scale(1.0);		
 	}
 	50% {
-		-webkit-transform: scale(0.95);
+		-webkit-transform: scale(0.98);
 	}	
 	80% {
-		-webkit-transform: scale(1.05);
+		-webkit-transform: scale(1.03);
 	}
 	90% {
 		-webkit-transform: scale(0.98);
@@ -275,8 +275,16 @@ img.desaturate:hover {
 }
 
 /*EXPERIMENT*/
-.itemdeck-change {
+.itemdeck-left {
 	-webkit-animation: slideOutLeft 2s;
+	width: 450px;
+	height: 450px;
+	background-color: white;
+	margin: 0 auto;
+}
+
+.itemdeck-right {
+	-webkit-animation: slideOutRight 2s;
 	width: 450px;
 	height: 450px;
 	background-color: white;
@@ -389,52 +397,6 @@ iframe, object, embed {
 	max-height: 400px;
 }
 
-/*rotateOutUpLeft*/
-@-webkit-keyframes rotateOutUpLeft {
-  0% {
-    -webkit-transform-origin: left bottom;
-    transform-origin: left bottom;
-    -webkit-transform: rotate(0);
-    transform: rotate(0);
-    opacity: 1;
-  }
-
-  100% {
-    -webkit-transform-origin: left bottom;
-    transform-origin: left bottom;
-    -webkit-transform: rotate(-90deg);
-    transform: rotate(-90deg);
-    opacity: 0;
-  }
-}
-
-@keyframes rotateOutUpLeft {
-  0% {
-    -webkit-transform-origin: left bottom;
-    -ms-transform-origin: left bottom;
-    transform-origin: left bottom;
-    -webkit-transform: rotate(0);
-    -ms-transform: rotate(0);
-    transform: rotate(0);
-    opacity: 1;
-  }
-
-  100% {
-    -webkit-transform-origin: left bottom;
-    -ms-transform-origin: left bottom;
-    transform-origin: left bottom;
-    -webkit-transform: rotate(-90deg);
-    -ms-transform: rotate(-90deg);
-    transform: rotate(-90deg);
-    opacity: 0;
-  }
-}
-
-.rotateOutUpLeft {
-  -webkit-animation-name: rotateOutUpLeft;
-  animation-name: rotateOutUpLeft;
-}
-
 /*SLIDEOUTLEFT*/
 
 @-webkit-keyframes slideOutLeft {
@@ -483,7 +445,54 @@ iframe, object, embed {
   }
 }
 
+/* SLIDEOUTRIGHT */
+@keyframes slideOutRight {
+  0% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
 
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    -ms-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+}
+
+.slideOutRight {
+  -webkit-animation-name: slideOutRight;
+  animation-name: slideOutRight;
+}
+
+@-webkit-keyframes slideOutUp {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+}
+
+@keyframes slideOutUp {
+  0% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    -ms-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+}
 
 
 @media only screen and (max-width: 40em) { 
@@ -687,4 +696,9 @@ label {
 .about {
 	margin-top: 20px;
 	width: 600px;
+}
+
+#gif {
+	border: 10px solid rgba(81,212,173,1);
+	border-radius: 25px;
 }
