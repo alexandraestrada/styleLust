@@ -17,7 +17,7 @@
 	  </div>
 
     <div class="shopbar">
-        <%= link_to "LOSE", items_path(cat: params[:cat], price: params[:price], is_like: false), class: "button lose", method: 'post' %>
+        <%= link_to "LOSE", items_path(cat: params[:cat], price: params[:price], is_like: false), class: "button lose slideOutLeft", method: 'post' %>
 
   		<div class="show-for-small-only">
         <%= link_to "BUY",@items.first.click_url,class: "button buy" %>
@@ -55,5 +55,13 @@ $(function() {
          threshold:50
       });
     });
+
+      $(function(){
+        $(".slideOutLeft").click(function(){
+          $(".itemdeck").toggleClass("itemdeck-change");
+        });
+      });
+
+    
 
 </script>

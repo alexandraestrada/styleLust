@@ -63,7 +63,7 @@ h4 {
 	padding-top: 50px;
 	z-index: 3;
 	/*keep an eye on this*/
-	margin-bottom: -20%;
+	margin-bottom: -300px;
 }
 
 #front-image {
@@ -251,6 +251,10 @@ img.desaturate:hover {
 	border: 1px dashed rgba(255,77,66,.4);
 }
 
+.brands {
+	margin-top: 100px;
+}
+
 /* ----------------------SHOP---------------------------------- */
 
 .deckcontainer {
@@ -267,7 +271,18 @@ img.desaturate:hover {
 .itemdeck {
 	padding-top: 90px;
 	overflow: hidden;
+
 }
+
+/*EXPERIMENT*/
+.itemdeck-change {
+	-webkit-animation: slideOutLeft 2s;
+	width: 485px;
+	height: 485px;
+	background-color: white;
+	margin: 0 auto;
+}
+
 
 label {
 	font-family: 'Raleway', sans-serif;
@@ -358,10 +373,6 @@ div.shop {
 	margin-top: -310px;
 }
 
-.favorites {
-	float: left;
-}
-
 .iframe {
 	height: 100%;
 	width: 100%;
@@ -377,6 +388,58 @@ iframe, object, embed {
 .shop-images {
 	max-height: 400px;
 }
+
+
+
+
+@-webkit-keyframes slideOutLeft {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+}
+
+@keyframes slideOutLeft {
+  0% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    -ms-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+}
+
+.slideOutLeft {
+  -webkit-animation-name: slideOutLeft;
+  animation-name: slideOutLeft;
+}
+
+@-webkit-keyframes slideOutRight {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+}
+
+
+
 
 @media only screen and (max-width: 40em) { 
 			.deckcontainer {
@@ -451,7 +514,15 @@ iframe, object, embed {
 	}
 
 }
+/* ----------------------NAV------------------------ */
 
+/*.favorites {
+	float: none;
+}
+
+.favorites:last-child {
+	float: left;
+}*/
 /* ----------------------SETTINGS---------------------------------- */
 
 div#a{
@@ -486,6 +557,10 @@ padding: 10px;
 
 .off-canvas-wrap,.inner-wrap{
     height:100%;   
+}
+
+.main-section {
+
 }
 /* ----------------------TO BE ORGANIZED--------------- */
 

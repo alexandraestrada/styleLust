@@ -67,7 +67,8 @@
   <div id="hotbutton">SEE MORE &nbsp; &#62;</div>
   <%end%>
 
-  <div class="row">
+
+  <div class="row brands">
     <div class="large-3 medium-3 small-3 columns">
       <%= image_tag("logo/burberry.png") %>
     </div>
@@ -126,7 +127,7 @@
 <script id="hotnow-template" type="text/x-handlebars-template">
   {{#each items}}
     <a href="{{click_url}}">
-      <div class="large-4 columns hotnow">
+      <div class="large-12 columns hotnow">
         <img src="{{image_url}}" class="desaturate" />
         <h5>{{name}}</h5>
       </div>
