@@ -13,15 +13,17 @@
 /* ADDED BY ELLIE - 03.03.14 */
 
 @import "foundation";
-@import url(http://fonts.googleapis.com/css?family=Raleway:400,100|Marvel|Open+Sans:400,300);
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,100|Marvel|Open+Sans:400,300|Hammersmith+One);
 
 /* ----------------------APPLICATION-------------------------------- */
 
 
-body {
+body,html {
 	text-align: center;
 	font-family: 'Raleway', sans-serif;
 	background-color: rgba(60,69,71,1);
+	height: 100%;
+	width: 100%;
 }
 
 .footer {
@@ -61,7 +63,7 @@ h4 {
 	padding-top: 50px;
 	z-index: 3;
 	/*keep an eye on this*/
-	margin-bottom: -145px;
+	margin-bottom: -20%;
 }
 
 #front-image {
@@ -205,6 +207,12 @@ h5 {
 	border-radius: 4px;
 	background-color: rgba(81,212,173,1);
 	margin: 0 auto;
+	font-family: 'Hammersmith One';
+}
+
+#hotbutton:hover {
+	border-bottom: 10px solid rgba(21,152,113,1);
+	background-color: rgba(51,182,143,1);
 }
 
 img.desaturate { 
@@ -228,6 +236,7 @@ img.desaturate:hover {
 	border-radius: 4px;
 	background-color: rgba(81,212,173,1);
 	margin: 0 auto;
+	font-family: 'Hammersmith One';
 }
 
 #explore:hover {
@@ -475,6 +484,9 @@ padding: 10px;
 	width: 25px;
 }
 
+.off-canvas-wrap,.inner-wrap{
+    height:100%;   
+}
 /* ----------------------TO BE ORGANIZED--------------- */
 
 

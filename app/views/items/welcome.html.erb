@@ -47,10 +47,10 @@
   <% if current_user %>
               
     <%= link_to items_path do %>
-  <div id="explore">Explore Now</div><% end %>
+  <div id="explore">EXPLORE NOW</div><% end %>
   <% else %>
     <%= link_to new_auth_path do %>
-  <div id="explore">Explore Now</div><% end %>
+  <div id="explore">EXPLORE NOW</div><% end %>
   <% end %>
 
 
@@ -64,9 +64,63 @@
   <div class="row" id="hotnow"></div>
 
   <%=link_to hotPicks_path do %>
-  <div id="hotbutton">See More &nbsp; &#62;</div>
+  <div id="hotbutton">SEE MORE &nbsp; &#62;</div>
   <%end%>
 
+  <div class="row">
+    <div class="large-3 medium-3 small-3 columns">
+      <%= image_tag("logo/burberry.png") %>
+    </div>
+
+    <div class="large-3 medium-3 small-3 columns">
+      <%= image_tag("logo/freepeople.png") %>
+    </div>
+
+    <div class="large-3 medium-3 small-3 columns">
+      <%= image_tag("logo/gucci.png") %>
+    </div>
+
+    <div class="large-3 medium-3 small-3 columns">
+      <%= image_tag("logo/jeffreycampbell.png") %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="large-3 medium-3 small-3 columns">
+      <%= image_tag("logo/louboutin.png") %>
+    </div>
+
+    <div class="large-3 medium-3 small-3 columns">
+      <%= image_tag("logo/louisvuitton.png") %>
+    </div>
+
+    <div class="large-3 medium-3 small-3 columns">
+      <%= image_tag("logo/nars.png") %>
+    </div>
+
+    <div class="large-3 medium-3 small-3 columns">
+      <%= image_tag("logo/nastygal.png") %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="large-3 medium-3 small-3 columns">
+      <%= image_tag("logo/nike.png") %>
+    </div>
+
+    <div class="large-3 medium-3 small-3 columns">
+      <%= image_tag("logo/opi.png") %>
+    </div>
+
+    <div class="large-3 medium-3 small-3 columns">
+      <%= image_tag("logo/samedelman.png") %>
+    </div>
+
+    <div class="large-3 medium-3 small-3 columns">
+      <%= image_tag("logo/urbanoutfitters.png") %>
+    </div>
+  </div>
+    
 </div>
 
 <script id="hotnow-template" type="text/x-handlebars-template">
