@@ -79,6 +79,10 @@ background-size: cover;
 		margin-bottom: 5%;
 		height: 500px;
 	}
+
+	#hotnow {
+		margin-left: -8px;
+	}
 }
 
 /*#signup {
@@ -690,6 +694,13 @@ yellow-gray:background-color: rgba(60,69,71,1);
 }
 
 $price-item-align: left;
+
+@media only screen and (max-width: 40em) {
+
+	.pricing-table {
+		margin-left: -5px;
+	}
+}
 
 /* ----------------------SIGN UP/IN---------------------------------- */
 .login {
