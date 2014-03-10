@@ -719,16 +719,28 @@ label {
 /* ----------------------ABOUT---------------------------------- */
 .about {
 	margin-top: 20px;
-	width: 600px;
+	width: 400px;
+}
+
+.EAK {
+	width: 100px;
+	height: 100%;
+}
+
+.EAK:hover {
+	background-color: #000;
+	opacity: .5;
+	border-radius: 50%;
 }
 
 #gif {
 	border: 10px solid #333;
 	border-radius: 25px;
+	width: 400px;
 }
 
 #developedBy {
-	font-family: 'Open Sans';
+	font-family: 'Marvel';
 	color: white;
 	margin-top: 60px;
 }
