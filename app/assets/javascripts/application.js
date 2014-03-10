@@ -14,8 +14,6 @@
 // require jquery
 //= require jquery_ujs
 //= require jquery.ui.all
-//= require skrollr
-//= require skrollr.menu
 //= require handlebars
 //= require turbolinks
 //= require_tree .
