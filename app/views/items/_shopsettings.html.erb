@@ -1,4 +1,4 @@
-<!-- slider test -->
+<!-- budget slider -->
 <p>
   <label for="amount">Budget:</label>
   <input type="text" id="amount" style="border:0; color:#99A5BE; font-weight:bold;">
@@ -7,7 +7,8 @@
 <div id="slider2"></div>
 
 <br>
-<!-- end slider test -->
+
+<!-- category dropdown -->
 <label for="category">Category:</label>
 <br>
 <div class="large-12 small-12 columns">
@@ -19,6 +20,7 @@
 
 <br>
 
+<!-- apply settings button -->
 <div id="a">
   <div class="large-12 small-12 columns">
     <div onclick="buildUrl()" class="button" id="save">APPLY</div> 
@@ -29,7 +31,7 @@
 <script>
   $(function(){
 
-    
+    // budget slider
     $( "#slider2" ).slider({
       value:100,
       min: 20,
@@ -41,15 +43,11 @@
         // console.log(ui.value);
       }
     });
-      // console.log($( "#slider" ).slider( "value" ));
     $( "#amount" ).val( "$" + $( "#slider2" ).slider( "value" ) );
     
 
 
     $('.fancy-select').fancySelect();
-    // var val = $( "#slider2" ).slider( "value" ) 
-    // var url = "http://0.0.0.0:3000/items?cat=" + $('#first_drop option:selected').text() + "&price=" + val;
-    // console.log(url);
   });
 
   function buildUrl(){
