@@ -54,8 +54,9 @@
 
   function buildUrl(){
     var val = $( "#slider2" ).slider( "value" ) 
-    var url = "http://0.0.0.0:3000/items?cat=" + $('#first_drop option:selected').text() + "&price=" + val;
-    // console.log(url);
+    var url = window.location.protocol + '//' + window.location.host + "/items?cat=" + $('#first_drop option:selected').text() + "&price=" + val;
+    
+    console.log(url);
     window.location.href = url;
     $('#panel1').removeClass("active");
   };
