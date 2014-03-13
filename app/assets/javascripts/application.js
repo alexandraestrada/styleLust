@@ -26,7 +26,7 @@ window.loadHotNow = function() {
  // AJAX call to get our list of things
  $.ajax({
    type: 'GET',
-   url: 'http://fathomless-harbor-2129.herokuapp.com/items.json',
+   url: 'http://0.0.0.0:3000/items.json',
    dataType: 'json'
  }).done(function(data) {
    // grabs the template we're going to use
