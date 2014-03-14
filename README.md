@@ -1,4 +1,4 @@
-styleLust
+StyleLust
 =========
 
  * Discover new fashion styles and trends from the hottest brands.
