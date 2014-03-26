@@ -1,10 +1,8 @@
-
-<body class="shop">
 <h1 class="play"><%= @items.first.category.name.upcase %></h1>
  <div class="row" id="swipe">
- 		<div class="deckcontainer large-12 small-12 columns">
+ 		<div class="deckcontainer expandOpen large-12 small-12 columns">
 
-	    <div class="itemdeck">
+	    <div class="itemdeck expandOpen">
         <%= link_to image_tag(@items.first.photo) , '#myModal', 'data-reveal-id'=> "myModal", class: "show-for-medium-up"%> 
         <%= link_to image_tag(@items.first.photo) , @items.first.click_url, class: "show-for-small-only"%> 
 	      <br>
@@ -19,7 +17,7 @@
 	  </div>
 
     <div class="shopbar">
-        <%= link_to "LOSE", items_path(cat: params[:cat], price: params[:price], is_like: false), class: "button lose", method: 'post' %>
+        <%= link_to "LOSE", items_path(cat: params[:cat], price: params[:price], is_like: false), class: "button lose slideOutLeft", method: 'post' %>
 
   		<div class="show-for-small-only">
         <%= link_to "BUY",@items.first.click_url,class: "button buy" %>
@@ -29,7 +27,7 @@
   			<%= link_to "BUY", '#myModal', 'data-reveal-id'=> "myModal", class: "button buy" %>
   		</div> 
   		
-        <%= link_to "LUST", items_path(cat: params[:cat], price: params[:price], is_like: true), class: "button lust", method: 'post' %>
+        <%= link_to "LUST", items_path(cat: params[:cat], price: params[:price], is_like: true), class: "button lust slideOutRight", method: 'post' %>
     </div>
     
 		 <%=render partial:'items/modal' %>
@@ -58,5 +56,18 @@ $(function() {
       });
     });
 
+      $(function(){
+        $(".slideOutLeft").click(function(){
+          $(".itemdeck").toggleClass("itemdeck-left");
+        });
+      });
+
+      $(function(){
+        $(".slideOutRight").click(function(){
+          $(".itemdeck").toggleClass("itemdeck-right");
+        });
+      });
+
+    
+
 </script>
-</body>

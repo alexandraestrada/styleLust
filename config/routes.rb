@@ -1,5 +1,6 @@
 StyleLust::Application.routes.draw do
 
+  get "/about" => "items#about", as: :about
   get "items/likedItems" => "items#likedItems", as: :likedItems
   get "sessions/create"
   get "sessions/destroy"
@@ -12,6 +13,7 @@ StyleLust::Application.routes.draw do
   resources :likes
   resources :users
   resources :auths, only:[:create,:new,:index]
+  get '/hotPicks' => 'items#hotPicks', as: :hotPicks
 
 
 

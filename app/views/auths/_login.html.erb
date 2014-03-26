@@ -1,5 +1,18 @@
-<%= form_for :user, {url: auths_path, method: 'post'} do |user| %>
-	<%= user.text_field :username, :placeholder => "Enter your username", class: "form-control" %><br>
-	<%= user.password_field :password, :placeholder => "Enter password", class: "form-control" %><br>
-	<%= user.submit "Log in!", class: "btn" %>
-<% end %>
+<div id="loginModal" class="reveal-modal" data-reveal>
+
+	<a class="close-reveal-modal">&#215;</a>
+
+	<h1 id="loginHeader">Log In</h1>
+
+	<div class="login">
+		<%= form_for :user, {url: auths_path, method: 'post'} do |f| %>
+
+		  <%= f.label :email %>
+	    <%= f.text_field :email, :placeholder => "Email Address" %><br />
+	    <%= f.label :password %>
+	    <%= f.password_field :password, :placeholder => "Enter password" %><br />
+	    <%= f.submit 'Login', class: "button fave-buy-btn"  %>
+	  <% end %>
+	</div>
+
+</div>

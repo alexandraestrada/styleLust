@@ -5,6 +5,7 @@ class AuthsController < ApplicationController
 			redirect_to items_path
 		else
 			@user = User.new
+			
 		end
 	end
 

@@ -1,6 +1,6 @@
-<h1>Log In</h1>
+<div class="login-mobile">
+	<h1 id="logo">Log In</h1>
 
-<div class="login">
   <%= form_for @user, {url: auths_path } do |f| %>
     <%= f.label :email %>
     <%= f.text_field :email %><br />

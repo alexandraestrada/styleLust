@@ -1,8 +1,7 @@
 styleLust
 =========
 
-<p>You are in the wedFrontEnd branch of the railsnew StyleLust. This version includes:<p>
-
- * Ellie's front end work done remotely on Wednesday, March 5th
- * testing files
+ * Discover new fashion styles and trends from the hottest brands.
+ * Share your lookbooks with your friends on Facebook or Instagram.
+ * Buy your favorite items from hundreds of brands in one location.
 

@@ -13,14 +13,17 @@
 /* ADDED BY ELLIE - 03.03.14 */
 
 @import "foundation";
-@import url(http://fonts.googleapis.com/css?family=Raleway:400,100|Marvel|Open+Sans:400,300);
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,100|Marvel|Open+Sans:400,300|Hammersmith+One|Montserrat);
 
 /* ----------------------APPLICATION-------------------------------- */
 
-body {
+
+body,html {
 	text-align: center;
 	font-family: 'Raleway', sans-serif;
 	background-color: rgba(60,69,71,1);
+	height: 100%;
+	width: 100%;
 }
 
 .footer {
@@ -28,10 +31,6 @@ body {
 }
 
 /* ----------------------HOMEPAGE---------------------------------- */
-
-div.home {
-	background-color: rgba(60,69,71,1);
-}
 
 h4 {
 	color: rgba(255,247,204,1);
@@ -42,24 +41,51 @@ h4 {
 	color: #bbb;
 }
 
+#loginModal {
+	background-color: rgba(60,69,71,1);
+}
+
+#signupModal {
+	background-color: rgba(60,69,71,1);
+}
+
+#loginHeader {
+	font-family: 'Raleway', sans-serif;
+	color: rgb(255,77,66);
+}
+
 /* ----------------------HOMEPAGE DESKTOP--------------- */
 
-.banner {
-	text-align: left;
-	padding-top: 5%;
-	font-family: 'Raleway', sans-serif;
-	overflow: hidden;
-}
-
-.front {
+.parallax-wrapper {
+	width: 100%;
+	background-color: rgba(60,69,71,1);
 	position: relative;
-	margin-right: 40%;
-	width: 300px;
-	height: 55px;
-	overflow: auto;
+	padding-top: 50px;
+	z-index: 3;
+	/*keep an eye on this*/
+	margin-bottom: -300px;
 }
 
-#signup {
+#front-image {
+height:415px;
+width:100%;
+background-image: url(Hot_Heart.png);
+background-size: cover;
+}
+
+@media only screen and (max-width: 40em) {
+	#front-image {
+		margin-top: 14%;
+		margin-bottom: 5%;
+		height: 500px;
+	}
+
+	#hotnow {
+		margin-left: -8px;
+	}
+}
+
+/*#signup {
 	margin-right: 1%;
 	background-color: rgba(118,200,176,1);
 	position: absolute;
@@ -73,7 +99,7 @@ h4 {
 	position: absolute;
 	right: 0px;
 	height: 50px;
-}
+}*/
 
 .iphone {
 	width: 300px;
@@ -81,22 +107,156 @@ h4 {
 	float: right;
 }
 
-.girl2 {
-	width: 150px;
-	height: 100%;
-	float: left;
-	margin-left: 30%;
+h5 {
+	font-family: 'Raleway', sans-serif;
 }
 
 #logo {
 	font-family: 'Raleway', sans-serif;
+	margin-top: 60px;
+	color: rgb(255,77,66);
+}
+
+#logo-small {
+	font-family: 'Raleway', sans-serif;
 	margin-top: 10px;
 	color: rgb(255,77,66);
+	color: white;
+	z-index: 4;
+	position: absolute;
+	margin-left: 20px;
+	margin-top: 60px;
 }
 
 .front-icons {
 	height: 200px;
+	width: 100%;	
+}
+
+.front-icons:hover {
+	background-color: #000;
+	opacity: .5;
+	border-radius: 50%;
+}
+
+.expandOpen {
+	animation-name: expandOpen;
+	-webkit-animation-name: expandOpen;	
+
+	animation-duration: 1.05s;	
+	-webkit-animation-duration: 1.05s;
+
+	animation-timing-function: ease-out;	
+	-webkit-animation-timing-function: ease-out;	
+
+	visibility: visible !important;	
+}
+
+@keyframes expandOpen {
+	0% {
+		transform: scale(1.8);		
+	}
+	50% {
+		transform: scale(0.95);
+	}	
+	80% {
+		transform: scale(1.05);
+	}
+	90% {
+		transform: scale(0.98);
+	}	
+	100% {
+		transform: scale(1);
+	}			
+}
+
+@-webkit-keyframes expandOpen {
+	0% {
+		-webkit-transform: scale(1.0);		
+	}
+	50% {
+		-webkit-transform: scale(0.98);
+	}	
+	80% {
+		-webkit-transform: scale(1.03);
+	}
+	90% {
+		-webkit-transform: scale(0.98);
+	}	
+	100% {
+		-webkit-transform: scale(1);
+	}					
+}
+
+.icon-info {
+	height: 200px;
+	width: 200px;
+	border-radius: 50%;
+	margin: 0 auto;
+}
+
+.hotpicksclass {
 	width: 100%;
+	height:500px;
+	border: 2px solid blue;
+}
+
+#hotbutton {
+	width: 300px;
+	height: 60px;
+	padding-top: 15px;
+	color: rgba(60,69,71,1);
+	font-size: 1.5em;
+	border-bottom: 10px solid rgba(51,182,143,1);
+	border-radius: 4px;
+	background-color: rgba(81,212,173,1);
+	margin: 0 auto;
+	font-family: 'Hammersmith One';
+}
+
+#hotbutton:hover {
+	border-bottom: 10px solid rgba(21,152,113,1);
+	background-color: rgba(51,182,143,1);
+}
+
+img.desaturate { 
+	-webkit-filter: grayscale(100%);
+	-moz-filter: grayscale(100%);
+	filter: grayscale(100%);
+}
+
+img.desaturate:hover {
+	filter: none;
+	-webkit-filter: grayscale(0%);
+}
+
+#explore {
+	width: 300px;
+	height: 90px;
+	padding-top: 30px;
+	color: rgba(60,69,71,1);
+	font-size: 1.5em;
+	border-bottom: 10px solid rgba(51,182,143,1);
+	border-radius: 4px;
+	background-color: rgba(81,212,173,1);
+	margin: 0 auto;
+	font-family: 'Hammersmith One';
+}
+
+#explore:hover {
+	border-bottom: 10px solid rgba(21,152,113,1);
+	background-color: rgba(51,182,143,1);
+}
+
+#cta {
+	margin: 3rem;
+	margin-top: 5rem;
+	margin-bottom: -3rem;
+	border: 1px dashed rgba(255,77,66,.4);
+}
+
+.brands {
+	margin-top: 100px;
 }
 
 /* ----------------------SHOP---------------------------------- */
@@ -112,26 +272,27 @@ h4 {
 	position: relative;
 }
 
-/*fix this*/
-@-webkit-keyframes infinite-spinning {
-  from {
-    -webkit-transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-  }
-}
-
 .itemdeck {
 	padding-top: 90px;
 	overflow: hidden;
 
 }
 
-.itemdeck-change {
-	/*fix this*/
-	-webkit-animation: infinite-spinning 2s;
+/*EXPERIMENT*/
+.itemdeck-left {
+	-webkit-animation: slideOutLeft 2s;
+	width: 450px;
+	height: 450px;
+	background-color: white;
+	margin: 0 auto;
+}
 
+.itemdeck-right {
+	-webkit-animation: slideOutRight 2s;
+	width: 450px;
+	height: 450px;
+	background-color: white;
+	margin: 0 auto;
 }
 
 
@@ -144,7 +305,7 @@ h1 {
 }
 
 .play {
-	margin-top: 3%;
+	margin-top: 6%;
 	font-family: 'Marvel';
 	color: rgb(81,212,173);
 }
@@ -169,7 +330,7 @@ div.shop {
 .shopbar {
 	width: 400px;
 	height: 60px;
-	overflow: auto;
+	overflow: hidden;
 	margin: 0 auto;
 	position: relative;
 }
@@ -195,7 +356,7 @@ div.shop {
 	font-family: 'Marvel';
 	height: 52px;
 	left: -3px;
-	top:-72px;
+	top:-71px;
 }
 
 .product-details {
@@ -224,10 +385,6 @@ div.shop {
 	margin-top: -310px;
 }
 
-.favorites {
-	float: left;
-}
-
 .iframe {
 	height: 100%;
 	width: 100%;
@@ -243,6 +400,104 @@ iframe, object, embed {
 .shop-images {
 	max-height: 400px;
 }
+
+/*SLIDEOUTLEFT*/
+
+@-webkit-keyframes slideOutLeft {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+}
+
+@keyframes slideOutLeft {
+  0% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    -ms-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+}
+
+.slideOutLeft {
+  -webkit-animation-name: slideOutLeft;
+  animation-name: slideOutLeft;
+}
+
+@-webkit-keyframes slideOutRight {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+}
+
+/* SLIDEOUTRIGHT */
+@keyframes slideOutRight {
+  0% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    -ms-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+}
+
+.slideOutRight {
+  -webkit-animation-name: slideOutRight;
+  animation-name: slideOutRight;
+}
+
+@-webkit-keyframes slideOutUp {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+}
+
+@keyframes slideOutUp {
+  0% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    -ms-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+}
+
 
 @media only screen and (max-width: 40em) { 
 			.deckcontainer {
@@ -331,16 +586,7 @@ padding: 10px;
 	float: left;
 }
 
-/* ----------------------TO BE ORGANIZED--------------- */
-
-
-
-#b{
-height:250px;
-width:100%;
-background-color: rgba(135,144,145,1);
-margin-bottom: 5%;
-}
+/* ----------------------NAV------------------------ */
 
 .menu {
 	height: 20px;
@@ -355,16 +601,26 @@ margin-bottom: 5%;
 }
 
 .user {
-	padding-bottom: 10px;
 	height: 35px;
 	width: 25px;
 }
+
+.off-canvas-wrap,.inner-wrap{
+    height:100%;   
+}
+
+/*.main-section {
+	height: 1050px;
+}*/
+/* ----------------------TO BE ORGANIZED--------------- */
+
 
 .test {
 	height: 500px;
 	width: 300px;
 	overflow: hidden;
-	border: 1px solid black;
+	border: none;
+	border-radius: 25px;
 }
 
 .uniform {
@@ -386,17 +642,40 @@ yellow-gray:background-color: rgba(60,69,71,1);
 }
 
 #save {
-	background-color: rgb(81,212,173);
+	height: 60px;
+	color: rgba(60,69,71,1);
+	border-bottom: 10px solid rgba(51,182,143,1);
+	border-radius: 4px;
+	background-color: rgba(81,212,173,1);
+	margin: 0 auto;
+	font-family: 'Open Sans';
+	text-align: center;
+}
+
+#save:hover {
+	border-bottom: 10px solid rgba(21,152,113,1);
+	background-color: rgba(51,182,143,1);
 }
 
 #settings {
 	background-color: #333;
 	font-family: 'Raleway';
+	color: #ff4d42;
+}
+
+#amount {
+	font-family: 'Hammersmith One';
+	background-color: #333;
+	text-align: center;
+}
+
+.accordion dd.active a {
+      background: #99A5BE;
 }
 
 /* ----------------------FAVORITES---------------------------------- */
 .pricing-table .title {
-	background-color: rgb(81,212,173);
+	background-color: rgb(110,119,121);
 	color: black;
 	font-family: 'Raleway';
 	font-weight: 400;
@@ -408,10 +687,63 @@ yellow-gray:background-color: rgba(60,69,71,1);
 
 $price-item-align: left;
 
+@media only screen and (max-width: 40em) {
+
+	.pricing-table {
+		margin-left: -5px;
+	}
+}
+
 /* ----------------------SIGN UP/IN---------------------------------- */
 .login {
 	width: 300px;
 	height: 500px;
-	border: 1px solid pink;
+	/*border: 1px solid pink;*/
 	margin: 0 auto;
+}
+
+.login-mobile {
+	width: 250px;
+	height: 450px;
+	overflow: hidden;
+	/*border: 1px solid pink;*/
+	margin: 0 auto;
+	position: relative;
+	left: 0px;
+	right: 0px;
+	clear: both;
+	margin-bottom: 50px;
+}
+
+label {
+	color: rgb(255,77,66);
+}
+
+/* ----------------------ABOUT---------------------------------- */
+.about {
+	margin-top: 20px;
+	width: 400px;
+}
+
+.EAK {
+	width: 100px;
+	height: 100%;
+}
+
+.EAK:hover {
+	background-color: #000;
+	opacity: .5;
+	border-radius: 50%;
+}
+
+#gif {
+	border: 10px solid #333;
+	border-radius: 25px;
+	width: 400px;
+}
+
+#developedBy {
+	font-family: 'Marvel';
+	color: white;
+	margin-top: 60px;
 }
