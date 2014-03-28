@@ -25,7 +25,7 @@ window.loadHotPicks3 = function() {
  $.ajax({
    type: 'GET',
 
-   url: 'http://0.0.0.0:3000/items.json',
+   url: 'http://fathomless-harbor-2129.herokuapp.com/items.json',
 
    dataType: 'json'
  }).done(function(data) {

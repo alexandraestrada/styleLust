@@ -262,7 +262,7 @@
    
    This will install the boot script under /etc/init.d/thin. Then copy your config files to
    /etc/thin. Works only under Linux.
- * Set process name to 'thin server (0.0.0.0:3000)' when running as a daemon, closes #32.
+ * Set process name to 'thin server (http://fathomless-harbor-2129.herokuapp.com/)' when running as a daemon, closes #32.
  * Make sure chdir option from config file is used when present.
  * Raise an error when starting a server as a daemon and pid file already exist, fixes #27.
 
@@ -312,7 +312,7 @@
  * Remove Server#listen! method. Use Server#start instead.
  * Server can now yield a Rack::Builder to allow building an app in one call:
  
-     Server.start '0.0.0.0', 3000 do
+     Server.start 'http://fathomless-harbor-2129.herokuapp.com/', 3000 do
        use Rack::CommonLogger
        use Rack::ShowExceptions
        map "/lobster" do
