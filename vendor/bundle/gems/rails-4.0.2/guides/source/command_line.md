@@ -64,7 +64,7 @@ With no further work, `rails server` will run our new shiny Rails app:
 $ cd commandsapp
 $ rails server
 => Booting WEBrick
-=> Rails 4.0.0 application starting in development on http://fathomless-harbor-2129.herokuapp.com/
+=> Rails 4.0.0 application starting in development on http://stylelust.herokuapp.com/
 => Call with -d to detach
 => Ctrl-C to shutdown server
 [2012-05-28 00:39:41] INFO  WEBrick 1.3.1
@@ -72,7 +72,7 @@ $ rails server
 [2012-05-28 00:39:41] INFO  WEBrick::HTTPServer#start: pid=69680 port=3000
 ```
 
-With just three commands we whipped up a Rails server listening on port 3000. Go to your browser and open [http://fathomless-harbor-2129.herokuapp.com/](http://localhost:3000), you will see a basic Rails app running.
+With just three commands we whipped up a Rails server listening on port 3000. Go to your browser and open [http://stylelust.herokuapp.com/](http://stylelust.herokuapp.com/), you will see a basic Rails app running.
 
 INFO: You can also use the alias "s" to start the server: `rails s`.
 
@@ -82,7 +82,7 @@ The server can be run on a different port using the `-p` option. The default dev
 $ rails server -e production -p 4000
 ```
 
-The `-b` option binds Rails to the specified IP, by default it is http://fathomless-harbor-2129.herokuapp.com/. You can run a server as a daemon by passing a `-d` option.
+The `-b` option binds Rails to the specified IP, by default it is http://stylelust.herokuapp.com/. You can run a server as a daemon by passing a `-d` option.
 
 ### `rails generate`
 

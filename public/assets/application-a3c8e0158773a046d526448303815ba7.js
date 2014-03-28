@@ -21018,7 +21018,7 @@ window.loadHotPicks3 = function() {
  $.ajax({
    type: 'GET',
 
-   url: 'http://fathomless-harbor-2129.herokuapp.com/items.json',
+   url: 'http://stylelust.herokuapp.com/items.json',
 
    dataType: 'json'
  }).done(function(data) {
@@ -21037,7 +21037,7 @@ window.loadHotPicks20 = function() {
  // AJAX call to get our list of things
  $.ajax({
    type: 'GET',
-   url: 'http://fathomless-harbor-2129.herokuapp.com/hotPicks.json',
+   url: 'http://stylelust.herokuapp.com/hotPicks.json',
    dataType: 'json'
  }).done(function(data) {
  	console.log(data)

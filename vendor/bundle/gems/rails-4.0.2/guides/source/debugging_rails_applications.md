@@ -248,7 +248,7 @@ Make sure you have started your web server with the option `--debugger`:
 ```bash
 $ rails server --debugger
 => Booting WEBrick
-=> Rails 4.0.0 application starting on http://fathomless-harbor-2129.herokuapp.com/
+=> Rails 4.0.0 application starting on http://stylelust.herokuapp.com/
 => Debugger enabled
 ...
 ```

@@ -21018,7 +21018,7 @@ window.loadHotPicks3 = function() {
  $.ajax({
    type: 'GET',
 
-   url: 'http://fathomless-harbor-2129.herokuapp.com/items.json',
+   url: 'http://stylelust.herokuapp.com/items.json',
 
    dataType: 'json'
  }).done(function(data) {
