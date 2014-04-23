@@ -312,7 +312,7 @@
  * Remove Server#listen! method. Use Server#start instead.
  * Server can now yield a Rack::Builder to allow building an app in one call:
  
-     Server.start 'http://fathomless-harbor-2129.herokuapp.com/', 3000 do
+     Server.start 'http://stylelust.herokuapp.com/', 3000 do
        use Rack::CommonLogger
        use Rack::ShowExceptions
        map "/lobster" do
